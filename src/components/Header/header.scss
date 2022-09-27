@@ -12,6 +12,11 @@
 
   &-image {
     display: flex;
-    height: 75%;   
+    height: 75%;
+
+    &-logo {
+      width: auto;
+      max-height: 100%;
+    }
   }
 }
