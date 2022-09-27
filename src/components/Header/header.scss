@@ -12,11 +12,21 @@
 
   &-image {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     height: 75%;
+
+    &-home {
+      margin-left: 5%;
+    }
 
     &-logo {
       width: auto;
       max-height: 100%;
+    }
+
+    &-user {
+      margin-right: 5%;
     }
   }
 }
