@@ -1,0 +1,49 @@
+.home {
+  width: 100%;
+  height: 100%;
+
+  &-elements {
+    width: 100%;
+    height: 85%;
+    padding-top: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &-consumption {
+      background-color: #89da59;
+      width: 90%;
+      height: 20%;
+      border: 5px solid wheat;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px black;
+    }
+  
+    &-statistical {
+      background-color: #ed5752;
+      width: 90%;
+      height: 20%;
+      border: 5px solid wheat;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px black;
+    }
+  
+    &-chat {
+      background-color: #008dcb;
+      width: 90%;
+      height: 20%;
+      border: 5px solid wheat;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px black;
+    }
+  
+    &-profile {
+      background-color: #ff8d3f;
+      width: 90%;
+      height: 20%;
+      border: 5px solid wheat;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px black;
+    }
+  }
+}
