@@ -12,40 +12,40 @@
     justify-content: center;
     align-items: center;
 
-    &-consumption {
+    &-consumption, &-statistical, &-chat, &-profile {
+      display: flex;
+      align-items: center;
       background-color: #89da59;
       width: 90%;
       height: 20%;
       border: 5px solid wheat;
       border-radius: 15px;
       box-shadow: 5px 5px 5px black;
+
+      &-text {
+        width: 75%;
+        font-size: 1.8em;
+        color: wheat;
+        text-align: center;
+        text-shadow: 2px 2px 2px black;
+      }
+
+      &-image {
+        width: 20%;
+        opacity: 50%;
+      }
     }
   
     &-statistical {
       background-color: #ed5752;
-      width: 90%;
-      height: 20%;
-      border: 5px solid wheat;
-      border-radius: 15px;
-      box-shadow: 5px 5px 5px black;
     }
   
     &-chat {
       background-color: #008dcb;
-      width: 90%;
-      height: 20%;
-      border: 5px solid wheat;
-      border-radius: 15px;
-      box-shadow: 5px 5px 5px black;
     }
   
     &-profile {
       background-color: #ff8d3f;
-      width: 90%;
-      height: 20%;
-      border: 5px solid wheat;
-      border-radius: 15px;
-      box-shadow: 5px 5px 5px black;
     }
   }
 }
