@@ -1,3 +1,6 @@
+import Field from '../Field/field';
+import Login from '../Login/login';
+
 import consumption from '../../assets/consumption.png';
 import statistical from '../../assets/statistical.png';
 import chat from '../../assets/chat.png';
@@ -13,6 +16,7 @@ const Home = ({
   passwordConfirm,
   average,
   price,
+  changeField,
   handleSignUp,  
 }) => {
   return (
@@ -28,12 +32,7 @@ const Home = ({
             </p>
           </div>
           <div className="home-welcome-login">
-            <form 
-              className="home-welcome-login-form"
-              onSubmit={handleSignUp}
-            >
-              
-            </form>
+            <Login />
           </div>
         </div>
       )}
