@@ -5,9 +5,38 @@ import profile from '../../assets/profile.png';
 
 import './home.scss';
 
-const Home = () => {
+const Home = ({
+  isLogged,
+  pseudo,
+  email,
+  password,
+  passwordConfirm,
+  average,
+  price,
+  handleSignUp,  
+}) => {
   return (
     <div className="home">
+      {!isLogged && (
+        <div className="home-welcome">
+          <div className="home-welcome-intro">
+            <p className="home-welcome-intro-hello">
+              Bonjour et bienvenue sur votre application <span className="home-welcome-span">smokless</span> !
+            </p>
+            <p className="home-welcome-intro-desc">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla deserunt molestiae optio culpa ratione. Consequuntur suscipit voluptas facilis nesciunt accusamus. Dolor repellendus deleniti voluptatem expedita tempora officia maxime quas aspernatur, sint facilis fugiat illum omnis quo saepe? Minima, repudiandae accusantium blanditiis fuga autem reiciendis eius, magnam neque ipsa, dolor qui?
+            </p>
+          </div>
+          <div className="home-welcome-login">
+            <form 
+              className="home-welcome-login-form"
+              onSubmit={handleSignUp}
+            >
+              
+            </form>
+          </div>
+        </div>
+      )}
       <div className="home-elements">
         <div className="home-elements-consumption">
           <p className="home-elements-consumption-text">
