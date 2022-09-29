@@ -69,7 +69,7 @@ const Login = ({
         <div className="login-access-signup-page">
           <Link
             className="login-access-signup-page-link"
-            to="/"
+            to="/signup"
           >
             Se créer un compte
           </Link>
