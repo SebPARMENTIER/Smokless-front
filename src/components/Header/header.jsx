@@ -8,9 +8,13 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-image">
-        <img className="header-image-home" src={home} alt="home" />
+        <button className="header-option-home-button">
+          <img className="header-image-home" src={home} alt="home" />
+        </button>
         <img className="header-image-logo" src={logo} alt="logo" />
-        <img className="header-image-user" src={user} alt="user" />
+        <button className="header-option-user-button">
+          <img className="header-image-user" src={user} alt="user" />
+        </button>
       </div>
     </div>
   );
