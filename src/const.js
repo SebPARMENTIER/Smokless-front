@@ -1,3 +1,1 @@
-const apiBaseUrl = 'localhost:3500';
-
-export default apiBaseUrl;
+export const apiBaseUrl = 'localhost:3500';

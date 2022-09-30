@@ -4,7 +4,7 @@ import {
   compose
 } from 'react-redux';
 
-import reducer from '../reducers';
+import reducer from '../reducers/user.js';
 import authMiddleware from '../middlewares/authMiddleware';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
