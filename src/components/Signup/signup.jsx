@@ -8,6 +8,8 @@ const Signup = ({
   pseudo,
   password,
   passwordConfirm,
+  average,
+  price,
   changeField,
   handleSignup,
   isCreatedUserSuccess,
@@ -62,6 +64,23 @@ const Signup = ({
               onChange={changeField}
               value={passwordConfirm}
             />
+            <Field
+              className="signup-creation-form-field-average"
+              name="average"
+              type="number"
+              placeholder="Moyenne de cigarettes par jour"
+              onChange={changeField}
+              value={average}
+            />
+            <Field
+              className="signup-creation-form-field-price"
+              name="price"
+              type="number"
+              step="0.01"
+              placeholder="Prix d'un paquet de cigarettes"
+              onChange={changeField}
+              value={price}
+            />
           </div>
           {isCreatedUserSuccess &&
             <div className="signup-creation-form-success">
@@ -112,6 +131,8 @@ Signup.propTypes = {
   pseudo: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   passwordConfirm: PropTypes.string.isRequired,
+  average: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
   isCreatedUserSuccess: PropTypes.bool.isRequired,
