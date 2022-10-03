@@ -4,12 +4,14 @@ import userReducer from '../reducers/user';
 import authMiddleware from '../middlewares/authMiddleware';
 
 const reducer = {
-  user: userReducer
-}
+  user: userReducer,
+};
+
 const store = configureStore({
   reducer,
   middleware: [
-    authMiddleware
-  ]});
+    authMiddleware,
+  ],
+});
 
 export default store;
