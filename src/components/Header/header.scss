@@ -17,5 +17,22 @@
       width: auto;
       max-height: 100%;
     }
+
+    &-home, &-user {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &-option {
+
+    &-home, &-user {
+      
+      &-button {
+        background-color: #edf8f8;
+        border: 1px solid #fd841f;
+        border-radius: 5px;
+      }
+    }
   }
 }
