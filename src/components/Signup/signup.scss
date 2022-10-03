@@ -1,0 +1,58 @@
+.signup {
+  width: 100%;
+  height: 100%;
+
+  &-desc {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  &-creation {
+    height: 90%;
+
+    &-form {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+
+      &-label {
+        color: grey;
+        font-weight: bold;
+      }
+
+      &-field {
+        width: 100%;
+        text-align: center;
+  
+        &-email, &-pseudo, &-password, &-passwordConfirm, &-average, &-price {
+          width: 80%;
+          height: 2em;
+          margin: 0.5em 0 2em 0;
+          border-radius: 5px;
+          text-align: center;
+        }
+      }
+
+      &-button {
+        width: 75%;
+        margin-top: 2em;
+        font-family: 'Didact Gothic', sans-serif;
+        background-color: #fd841f;
+        color: wheat;
+        text-shadow: 1px 1px 1px saddlebrown;
+        font-size: 1em;
+        padding: 0.5em 4em;
+        border: 5px solid #fcc875;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px saddlebrown;
+      }
+    }
+
+    
+  }
+}

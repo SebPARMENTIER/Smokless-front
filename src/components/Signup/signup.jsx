@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import Field from "../Field/field";
 
+import './signup.scss';
+
 const Signup = ({
   email,
   pseudo,
@@ -36,6 +38,9 @@ const Signup = ({
           onSubmit={handleSubmit}
         >
           <div className="signup-creation-form-field">
+            <label className="signup-creation-form-label">
+              Email
+            </label>
             <Field
               className="signup-creation-form-field-email"
               name="email"
@@ -44,6 +49,9 @@ const Signup = ({
               onChange={changeField}
               value={email}
             />
+            <label className="signup-creation-form-label">
+              Pseudo
+            </label>
             <Field
               className="signup-creation-form-field-pseudo"
               name="pseudo"
@@ -52,6 +60,9 @@ const Signup = ({
               onChange={changeField}
               value={pseudo}
             />
+            <label className="signup-creation-form-label">
+              Mot de passe
+            </label>
             <Field
               className="signup-creation-form-field-password"
               name="password"
@@ -60,6 +71,9 @@ const Signup = ({
               onChange={changeField}
               value={password}
             />
+            <label className="signup-creation-form-label">
+              Vérification mot de passe
+            </label>
             <Field
               className="signup-creation-form-field-passwordConfirm"
               name="passwordConfirm"
@@ -68,6 +82,9 @@ const Signup = ({
               onChange={changeField}
               value={passwordConfirm}
             />
+            <label className="signup-creation-form-label">
+              Consommation moyenne de cigarettes par jour
+            </label>
             <Field
               className="signup-creation-form-field-average"
               name="average"
@@ -76,6 +93,9 @@ const Signup = ({
               onChange={changeField}
               value={average}
             />
+            <label className="signup-creation-form-label">
+              Prix d'un paquet de 20 cigarettes
+            </label>
             <Field
               className="signup-creation-form-field-price"
               name="price"
