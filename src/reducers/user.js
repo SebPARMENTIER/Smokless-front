@@ -4,6 +4,7 @@ import {
   CREATE_USER_ERROR,
   CREATE_PASSWORD_ERROR,
   CREATE_PASSWORD_LENGTH_ERROR,
+  GO_BACK_TO_HOME_TO_LOGIN,
 } from '../actions/user';
 
 export const initialState = {
@@ -60,6 +61,11 @@ const reducer = (state = initialState, action = {}) => {
         isCreatedPasswordError: false,
         isCreatedPasswordLengthError: true,
         isCreatedUserError: false,
+      };
+    case GO_BACK_TO_HOME_TO_LOGIN:
+      return {
+        ...state,
+        isCreatedUserSuccess: false,
       };
     default:
       return state;

@@ -5,6 +5,7 @@ import Signup from '../../components/Signup/signup';
 import {
   createUserValue,
   createUserAction,
+  goBackToHomeToLogin,
 } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -26,6 +27,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleSignup: () => {
     dispatch(createUserAction());
+  },
+  handleGoBackToHomeToLogin: () => {
+    dispatch(goBackToHomeToLogin());
   },
 });
 

@@ -12,6 +12,7 @@ const Signup = ({
   price,
   changeField,
   handleSignup,
+  handleGoBackToHomeToLogin,
   isCreatedUserSuccess,
   isCreatedPasswordError,
   isCreatedPasswordLengthError,
@@ -21,6 +22,9 @@ const Signup = ({
     event.preventDefault();
     handleSignup();
   };
+  const handleClickToGoBackToHomeToLogin = () => {
+    handleGoBackToHomeToLogin();
+  }
   return (
     <div className="signup">
       <p className="signup-desc">
@@ -91,6 +95,7 @@ const Signup = ({
                 <Link
                   className="signup-creation-form-sucess-page-link"
                   to="/"
+                  onClick={handleClickToGoBackToHomeToLogin}
                 >
                 OK
                 </Link>
@@ -135,6 +140,7 @@ Signup.propTypes = {
   price: PropTypes.any.isRequired,
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
+  handleGoBackToHomeToLogin: PropTypes.func.isRequired,
   isCreatedUserSuccess: PropTypes.bool.isRequired,
   isCreatedPasswordError: PropTypes.bool.isRequired,
   isCreatedPasswordLengthError: PropTypes.bool.isRequired,
