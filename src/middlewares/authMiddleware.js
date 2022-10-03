@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { apiBaseUrl } from '../const';
 import {
-  SIGNUP,
+  CREATE_USER,
   createPasswordLengthError,
   createPasswordError,
   createUserSuccess,
@@ -12,22 +12,27 @@ import {
 const authMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
   switch (action.type) {
-    case SIGNUP: {
+    case CREATE_USER: {
       if (state.user.password.length < 8) {
         store.dispatch(createPasswordLengthError());
       } else if (state.user.password !== state.user.passwordConfirm) {
         store.dispatch(createPasswordError());
       } else {
-        const config = {
-          method: 'post',
+        const options = {
+          method: 'POST',
           url: `${apiBaseUrl}/signup`,
+          headers: {
+            'Content-Type': 'application/json',
+          },
           data: {
             pseudo: state.user.pseudo,
             email: state.user.email,
             password: state.user.password,
+            average: state.user.average,
+            price: state.user.price,
           },
         };
-        axios(config)
+        axios(options)
           .then((response) => {
             store.dispatch(createUserSuccess(response.data));
           })
