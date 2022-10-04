@@ -6,8 +6,8 @@ import Field from "../Field/field";
 import './signup.scss';
 
 const Signup = ({
-  email,
   pseudo,
+  email,
   password,
   passwordConfirm,
   average,
@@ -16,9 +16,9 @@ const Signup = ({
   handleSignup,
   handleGoBackToHomeToLogin,
   isCreatedUserSuccess,
-  isCreatedPasswordError,
-  isCreatedPasswordLengthError,
-  isCreatedUserError
+  isCreatedUserError,
+  successMessage,
+  errorMessage,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,17 +39,6 @@ const Signup = ({
         >
           <div className="signup-creation-form-field">
             <label className="signup-creation-form-label">
-              Email
-            </label>
-            <Field
-              className="signup-creation-form-field-email"
-              name="email"
-              type="email"
-              placeholder="Email..."
-              onChange={changeField}
-              value={email}
-            />
-            <label className="signup-creation-form-label">
               Pseudo
             </label>
             <Field
@@ -61,7 +50,21 @@ const Signup = ({
               value={pseudo}
             />
             <label className="signup-creation-form-label">
+              Email
+            </label>
+            <Field
+              className="signup-creation-form-field-email"
+              name="email"
+              type="email"
+              placeholder="Email..."
+              onChange={changeField}
+              value={email}
+            />
+            <label className="signup-creation-form-label">
               Mot de passe
+              <p className="signup-creation-form-label-span">
+                (Au moins 10 caractères - 1 majuscule - 1 minuscule - 1 chiffre - 1 caractère spécial)
+              </p>
             </label>
             <Field
               className="signup-creation-form-field-password"
@@ -109,7 +112,7 @@ const Signup = ({
           {isCreatedUserSuccess &&
             <div className="signup-creation-form-success">
               <p className="signup-creation-form-success-desc">
-                Compte crée avec succès, veuillez vous connecter
+                {successMessage}
               </p>
               <div className="signup-creation-form-sucess-page">
                 <Link
@@ -124,17 +127,7 @@ const Signup = ({
           }
           {isCreatedUserError &&
             <p className="signup-creation-form-error">
-              Email ou pseudo déjà existant.
-            </p>
-          }
-          {isCreatedPasswordError &&
-            <p className="signup-creation-form-error">
-              Mot de passe non identique.
-            </p>
-          }
-          {isCreatedPasswordLengthError &&
-            <p className="signup-creation-form-error">
-              Votre mot de passe doit contenir au minimum 8 caractères.
+              {errorMessage}
             </p>
           }
           {!isCreatedUserSuccess && (
@@ -152,8 +145,8 @@ const Signup = ({
 };
 
 Signup.propTypes = {
-  email: PropTypes.string.isRequired,
   pseudo: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   passwordConfirm: PropTypes.string.isRequired,
   average: PropTypes.any.isRequired,
@@ -162,9 +155,9 @@ Signup.propTypes = {
   handleSignup: PropTypes.func.isRequired,
   handleGoBackToHomeToLogin: PropTypes.func.isRequired,
   isCreatedUserSuccess: PropTypes.bool.isRequired,
-  isCreatedPasswordError: PropTypes.bool.isRequired,
-  isCreatedPasswordLengthError: PropTypes.bool.isRequired,
   isCreatedUserError: PropTypes.bool.isRequired,
+  successMessage: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string.isRequired,
 };
 
 export default Signup;

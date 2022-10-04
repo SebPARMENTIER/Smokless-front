@@ -16,9 +16,9 @@ const mapStateToProps = (state) => ({
   average: state.user.average,
   price: state.user.price,
   isCreatedUserSuccess: state.user.isCreatedUserSuccess,
-  isCreatedPasswordError: state.user.isCreatedPasswordError,
-  isCreatedPasswordLengthError: state.user.isCreatedPasswordLengthError,
   isCreatedUserError: state.user.isCreatedUserError,
+  successMessage: state.user.successMessage,
+  errorMessage: state.user.errorMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({

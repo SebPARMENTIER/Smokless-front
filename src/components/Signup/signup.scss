@@ -23,6 +23,11 @@
       &-label {
         color: grey;
         font-weight: bold;
+
+        &-span {
+          font-size: 0.6em;
+          margin: 0;
+        }
       }
 
       &-field {

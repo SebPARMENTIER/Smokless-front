@@ -2,8 +2,6 @@ import {
   SET_USER_VALUE,
   CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
-  CREATE_PASSWORD_ERROR,
-  CREATE_PASSWORD_LENGTH_ERROR,
   GO_BACK_TO_HOME_TO_LOGIN,
 } from '../actions/user';
 
@@ -15,9 +13,9 @@ export const initialState = {
   average: 0,
   price: 0,
   isCreatedUserSuccess: false,
-  isCreatedPasswordError: false,
-  isCreatedPasswordLengthError: false,
   isCreatedUserError: false,
+  successMessage: '',
+  errorMessage: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -31,36 +29,20 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isCreatedUserSuccess: action.data.isCreatedUserSuccess,
+        successMessage: action.data.successMessage,
         pseudo: '',
         email: '',
         password: '',
         passwordConfirm: '',
         average: 0,
         price: 0,
-        isCreatedPasswordError: false,
-        isCreatedPasswordLengthError: false,
         isCreatedUserError: false,
       };
     case CREATE_USER_ERROR:
       return {
         ...state,
-        isCreatedPasswordError: false,
-        isCreatedPasswordLengthError: false,
         isCreatedUserError: true,
-      };
-    case CREATE_PASSWORD_ERROR:
-      return {
-        ...state,
-        isCreatedPasswordError: true,
-        isCreatedPasswordLengthError: false,
-        isCreatedUserError: false,
-      };
-    case CREATE_PASSWORD_LENGTH_ERROR:
-      return {
-        ...state,
-        isCreatedPasswordError: false,
-        isCreatedPasswordLengthError: true,
-        isCreatedUserError: false,
+        errorMessage: action.data.error,
       };
     case GO_BACK_TO_HOME_TO_LOGIN:
       return {
