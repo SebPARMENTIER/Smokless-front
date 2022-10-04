@@ -26,7 +26,7 @@ const Signup = ({
   };
   const handleClickToGoBackToHomeToLogin = () => {
     handleGoBackToHomeToLogin();
-  }
+  };
   return (
     <div className="signup">
       {!isCreatedUserSuccess && (
@@ -105,7 +105,6 @@ const Signup = ({
                   className="signup-creation-form-field-price"
                   name="price"
                   type="number"
-                  step="0.01"
                   placeholder="Prix d'un paquet de cigarettes"
                   onChange={changeField}
                   value={price}

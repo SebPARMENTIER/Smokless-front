@@ -10,8 +10,8 @@ export const initialState = {
   email: '',
   password: '',
   passwordConfirm: '',
-  average: 0,
-  price: 0,
+  average: '',
+  price: '',
   isCreatedUserSuccess: false,
   isCreatedUserError: false,
   successMessage: '',
@@ -34,8 +34,8 @@ const reducer = (state = initialState, action = {}) => {
         email: '',
         password: '',
         passwordConfirm: '',
-        average: 0,
-        price: 0,
+        average: '',
+        price: '',
         isCreatedUserError: false,
       };
     case CREATE_USER_ERROR:

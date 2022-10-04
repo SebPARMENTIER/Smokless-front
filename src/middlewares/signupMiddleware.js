@@ -22,7 +22,7 @@ const signupMiddleware = (store) => (next) => (action) => {
           email: state.user.email,
           password: state.user.password,
           passwordConfirm: state.user.passwordConfirm,
-          average: state.user.average,
+          average: Math.round(state.user.average),
           price: state.user.price,
         },
       };
