@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import userReducer from '../reducers/user';
-import authMiddleware from '../middlewares/authMiddleware';
+import signupMiddleware from '../middlewares/signupMiddleware';
 
 const reducer = {
   user: userReducer,
@@ -10,7 +10,7 @@ const reducer = {
 const store = configureStore({
   reducer,
   middleware: [
-    authMiddleware,
+    signupMiddleware,
   ],
 });
 

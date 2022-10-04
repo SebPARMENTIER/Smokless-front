@@ -7,7 +7,7 @@ import {
   createUserError,
 } from '../actions/user';
 
-const authMiddleware = (store) => (next) => (action) => {
+const signupMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
   switch (action.type) {
     case CREATE_USER: {
@@ -40,4 +40,4 @@ const authMiddleware = (store) => (next) => (action) => {
   }
 };
 
-export default authMiddleware;
+export default signupMiddleware;
