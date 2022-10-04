@@ -94,18 +94,21 @@ const Signup = ({
                   className="signup-creation-form-field-average"
                   name="average"
                   type="number"
-                  placeholder="Moyenne de cigarettes par jour"
+                  placeholder="Consommation moyenne de cigarettes par jour"
                   onChange={changeField}
                   value={average}
                 />
                 <label className="signup-creation-form-label">
                   Prix d'un paquet de 20 cigarettes
+                  <p className="signup-creation-form-label-span">
+                    (Sans le symbole € - Exemple: 10 ou 10,20)
+                  </p>
                 </label>
                 <Field
                   className="signup-creation-form-field-price"
                   name="price"
                   type="number"
-                  placeholder="Prix d'un paquet de cigarettes"
+                  placeholder="Prix d'un paquet de 20 cigarettes"
                   onChange={changeField}
                   value={price}
                 />
