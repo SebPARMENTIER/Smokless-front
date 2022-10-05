@@ -7,6 +7,7 @@ import {
 } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
+  isLogged: state.user.isLogged,
   isCreatedUserSuccess: state.user.isCreatedUserSuccess,
 });
 

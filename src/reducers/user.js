@@ -16,6 +16,7 @@ export const initialState = {
   isCreatedUserError: false,
   successMessage: '',
   errorMessage: '',
+  isLogged: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
