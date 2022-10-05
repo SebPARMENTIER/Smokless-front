@@ -3,6 +3,7 @@ import {
   CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
   GO_BACK_TO_HOME_TO_LOGIN,
+  LOGOUT,
 } from '../actions/user';
 
 export const initialState = {
@@ -49,6 +50,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isCreatedUserSuccess: false,
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        isLogged: false,
       };
     default:
       return state;

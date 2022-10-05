@@ -9,7 +9,11 @@ import './header.scss';
 
 const Header = ({
   isLogged,
+  onClickLogout,
 }) => {
+  const handleLogout = () => {
+    onClickLogout();
+  };
   return (
     <div className="header">
       <div className="header-element">
@@ -24,11 +28,15 @@ const Header = ({
         <div className="header-element-logo">
           <img className="header-element-logo-image" src={logo} alt="logo" />
         </div>
-        <div className='header-element-user'>
+        <div className={isLogged ? 'header-element-user' : 'header-element-user-hidden'}>
         {isLogged && (
-          <button className="header-element-user-button" type="button">
-            <img className="header-element-user-button-image" src={user} alt="user" />
-          </button>
+          <Link
+            className="header-element-user-link"
+            to="/"
+            onClick={handleLogout}
+          >
+            <img className="header-element-user-link-image" src={user} alt="user" />
+          </Link>
         )}
         </div>
       </div>
@@ -38,6 +46,7 @@ const Header = ({
 
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  onClickLogout: PropTypes.func.isRequired,
 };
 
 export default Header;

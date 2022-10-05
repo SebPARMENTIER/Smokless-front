@@ -14,18 +14,17 @@
     height: 70%;
     margin: 0 1em;
 
-    &-home {
+    &-home, &-user {
       height: 100%;
 
       &-link {
-        display: flex;
-        justify-content: center;
-        height: 100%;
-        background-color: transparent;
 
         &-image {
           height: 100%;
         }
+      }
+      &-hidden {
+        width: 40px;
       }
     }
 
@@ -36,21 +35,6 @@
 
       &-image {
         height: 100%;
-      }
-    }
-
-    &-user {
-      height: 100%;
-      
-      &-button {
-        height: 100%;
-        padding: 0;
-        background-color: transparent;
-        border: none;
-
-        &-image {
-          height: 100%;
-        }
       }
     }
   }
