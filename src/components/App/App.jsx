@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import Header from '../Header/header';
-import Home from '../Home/home';
+import Home from '../../containers/Home';
 import Footer from '../Footer/footer';
 import Signup from '../../containers/Signup';
 

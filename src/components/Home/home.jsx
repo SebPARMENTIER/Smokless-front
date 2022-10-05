@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import Field from '../Field/field';
 import Login from '../Login/login';
 
@@ -17,8 +19,15 @@ const Home = ({
   average,
   price,
   changeField,
-  handleSignUp,  
+  handleSignUp,
+  isCreatedUserSuccess,
+  setIsCreatedUserSuccessToFalse,
 }) => {
+  useEffect(() => {
+    if (isCreatedUserSuccess) {
+      setIsCreatedUserSuccessToFalse();
+    }
+  }, []);
   return (
     <div className="home">
       {!isLogged && (
