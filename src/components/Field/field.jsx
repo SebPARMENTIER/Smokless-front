@@ -8,6 +8,7 @@ const Field = ({
   placeholder,
   onChange,
   className,
+  step,
 }) => {
   const handleChange = (event) => {
     onChange(event.target.value, name);
@@ -19,7 +20,6 @@ const Field = ({
   return (
     <div>
       <input
-        required
         className={style}
         value={value}
         onChange={handleChange}
@@ -27,6 +27,7 @@ const Field = ({
         type={type}
         placeholder={placeholder}
         name={name}
+        step={step}
       />
     </div>
   );
