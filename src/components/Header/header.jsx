@@ -16,26 +16,26 @@ const Header = ({
   };
   return (
     <div className="header">
-      <div className="header-element">
-        <div className="header-element-home">
+      <div className="header-elements">
+        <div className="header-elements-home">
           <Link
-            className="header-element-home-link"
+            className="header-elements-home-link"
             to="/"
           >
-            <img className="header-element-home-link-image" src={home} alt="home" />
+            <img className="header-elements-home-link-image" src={home} alt="home" />
           </Link>
         </div>
-        <div className="header-element-logo">
-          <img className="header-element-logo-image" src={logo} alt="logo" />
+        <div className="header-elements-logo">
+          <img className="header-elements-logo-image" src={logo} alt="logo" />
         </div>
-        <div className={isLogged ? 'header-element-user' : 'header-element-user-hidden'}>
+        <div className={isLogged ? 'header-elements-user' : 'header-elements-user-hidden'}>
         {isLogged && (
           <Link
-            className="header-element-user-link"
+            className="header-elements-user-link"
             to="/"
             onClick={handleLogout}
           >
-            <img className="header-element-user-link-image" src={user} alt="user" />
+            <img className="header-elements-user-link-image" src={user} alt="user" />
           </Link>
         )}
         </div>
