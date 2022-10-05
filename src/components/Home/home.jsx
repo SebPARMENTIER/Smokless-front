@@ -26,7 +26,7 @@ const Home = ({
         <div className="home-welcome">
           <div className="home-welcome-intro">
             <p className="home-welcome-intro-hello">
-              Bonjour et bienvenue sur votre application <span className="home-welcome-span">smokless</span> !
+              Bonjour et bienvenue sur votre application <span className="home-welcome-intro-hello-span">smokless</span> !
             </p>
             <p className="home-welcome-intro-desc">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla deserunt molestiae optio culpa ratione. Consequuntur suscipit voluptas facilis nesciunt accusamus. Dolor repellendus deleniti voluptatem expedita tempora officia maxime quas aspernatur, sint facilis fugiat illum omnis quo saepe? Minima, repudiandae accusantium blanditiis fuga autem reiciendis eius, magnam neque ipsa, dolor qui?
