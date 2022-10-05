@@ -131,13 +131,13 @@ const Signup = ({
         </>
       )}
       {isCreatedUserSuccess &&
-        <div className="signup-creation-form-success">
-          <p className="signup-creation-form-success-desc">
+        <div className="signup-creation-success">
+          <p className="signup-creation-success-desc">
             {successMessage}
           </p>
-          <div className="signup-creation-form-sucess-page">
+          <div className="signup-creation-success-page">
             <Link
-              className="signup-creation-form-sucess-page-link"
+              className="signup-creation-success-page-link"
               to="/"
               onClick={handleClickToGoBackToHomeToLogin}
             >
