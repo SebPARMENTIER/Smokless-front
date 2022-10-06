@@ -3,6 +3,9 @@ import {
   CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
   GO_BACK_TO_HOME_TO_LOGIN,
+  SET_LOGIN_VALUE,
+  LOGIN_USER_SUCCESS,
+  LOGIN_USER_ERROR,
   LOGOUT,
 } from '../actions/user';
 
@@ -18,6 +21,8 @@ export const initialState = {
   successMessage: '',
   errorMessage: '',
   isLogged: false,
+  userId: '',
+  accessToken: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -50,6 +55,23 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isCreatedUserSuccess: false,
+      };
+    case SET_LOGIN_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case LOGIN_USER_SUCCESS:
+      const { id, pseudo, average, price } = action.data.userData;
+      const { accessToken } = action.data;
+      return {
+        ...state,
+        userId: id,
+        pseudo,
+        average,
+        price,
+        accessToken,
+        isLogged: true,
       };
     case LOGOUT:
       return {
