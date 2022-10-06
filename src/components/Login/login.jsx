@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Field from "../Field/field";
 
+import './login.scss';
+
 const Login = ({
   email,
   password,
@@ -63,13 +65,13 @@ const Login = ({
           )}
         </form>
       </div>
-      <div className="login-access-signup">
-        <p className="login-access-signup-desc">
+      <div className="login-signup">
+        <p className="login-signup-desc">
           Pas encore de compte ?
         </p>
-        <div className="login-access-signup-page">
+        <div className="login-signup-page">
           <Link
-            className="login-access-signup-page-link"
+            className="login-signup-page-link"
             to="/signup"
           >
             Se créer un compte
