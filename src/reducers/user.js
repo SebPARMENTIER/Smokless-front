@@ -7,6 +7,7 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_ERROR,
   LOGOUT,
+  DISPLAY_WELCOME,
 } from '../actions/user';
 
 export const initialState = {
@@ -25,6 +26,7 @@ export const initialState = {
   errorLoginMessage: '',
   userId: '',
   accessToken: null,
+  isDisplayingWelcome: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -94,6 +96,12 @@ const reducer = (state = initialState, action = {}) => {
         average: '',
         price: '',
         accessToken: null,
+        isDisplayingWelcome: true,
+      };
+    case DISPLAY_WELCOME:
+      return {
+        ...state,
+        isDisplayingWelcome: false,
       };
     default:
       return state;

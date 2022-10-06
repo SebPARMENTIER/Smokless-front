@@ -1,0 +1,22 @@
+.welcome {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-swipe{
+    transform: translateX(-100%);
+    transition: 2s;
+  }
+  
+  
+
+  &-hello {
+    font-size: 2em;
+
+    &-span {
+      color: #fd841f;
+      font-weight: bold;
+    }
+  }
+}

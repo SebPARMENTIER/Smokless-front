@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Login from '../../containers/Login';
+import Welcome from '../../containers/Welcome';
 
 import consumption from '../../assets/consumption.png';
 import statistical from '../../assets/statistical.png';
@@ -15,6 +16,8 @@ const Home = ({
   isLogged,
   isSignupUserSuccess,
   setIsSignupUserSuccessToFalse,
+  isDisplayingWelcome,
+  setDisplayingWelcome,
 }) => {
   useEffect(() => {
     if (isSignupUserSuccess) {
@@ -22,7 +25,7 @@ const Home = ({
     }
     if (isLogged) {
       const timer = setTimeout(() => {
-        alert('coucou');
+        setDisplayingWelcome();
       }, 2000);
       return () => clearTimeout(timer);
     };
@@ -44,7 +47,8 @@ const Home = ({
           </div>
         </div>
       )}
-      {isLogged && (
+      {isDisplayingWelcome && (<Welcome />)}
+      {isLogged && !isDisplayingWelcome && (
         <div className="home-elements">
           <Link className="home-elements-consumption">
             <p className="home-elements-consumption-text">
@@ -99,6 +103,8 @@ Home.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   isSignupUserSuccess: PropTypes.bool.isRequired,
   setIsSignupUserSuccessToFalse: PropTypes.func.isRequired,
+  isDisplayingWelcome: PropTypes.bool.isRequired,
+  setDisplayingWelcome: PropTypes.func.isRequired,
 };
 
 export default Home;
