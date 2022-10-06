@@ -1,7 +1,7 @@
 import {
-  SET_USER_VALUE,
-  CREATE_USER_SUCCESS,
-  CREATE_USER_ERROR,
+  SET_SIGNUP_VALUE,
+  SIGNUP_USER_SUCCESS,
+  SIGNUP_USER_ERROR,
   GO_BACK_TO_HOME_TO_LOGIN,
   SET_LOGIN_VALUE,
   LOGIN_USER_SUCCESS,
@@ -16,8 +16,8 @@ export const initialState = {
   passwordConfirm: '',
   average: '',
   price: '',
-  isCreatedUserSuccess: false,
-  isCreatedUserError: false,
+  isSignupUserSuccess: false,
+  isSignupUserError: false,
   successMessage: '',
   errorMessage: '',
   isLogged: false,
@@ -28,15 +28,15 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SET_USER_VALUE:
+    case SET_SIGNUP_VALUE:
       return {
         ...state,
         [action.name]: action.value,
       };
-    case CREATE_USER_SUCCESS:
+    case SIGNUP_USER_SUCCESS:
       return {
         ...state,
-        isCreatedUserSuccess: action.data.isCreatedUserSuccess,
+        isSignupUserSuccess: action.data.isSignupUserSuccess,
         successMessage: action.data.successMessage,
         pseudo: '',
         email: '',
@@ -44,18 +44,18 @@ const reducer = (state = initialState, action = {}) => {
         passwordConfirm: '',
         average: '',
         price: '',
-        isCreatedUserError: false,
+        isSignupUserError: false,
       };
-    case CREATE_USER_ERROR:
+    case SIGNUP_USER_ERROR:
       return {
         ...state,
-        isCreatedUserError: true,
+        isSignupUserError: true,
         errorMessage: action.data.error,
       };
     case GO_BACK_TO_HOME_TO_LOGIN:
       return {
         ...state,
-        isCreatedUserSuccess: false,
+        isSignupUserSuccess: false,
       };
     case SET_LOGIN_VALUE:
       return {
@@ -75,7 +75,7 @@ const reducer = (state = initialState, action = {}) => {
         isLogged: true,
         email: '',
         password: '',
-        isCreatedUserError: false,
+        isSignupUserError: false,
         isLoggedUserError: false,
       };
     case LOGIN_USER_ERROR:

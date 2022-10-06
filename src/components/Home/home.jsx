@@ -12,12 +12,12 @@ import './home.scss';
 
 const Home = ({
   isLogged,
-  isCreatedUserSuccess,
-  setIsCreatedUserSuccessToFalse,
+  isSignupUserSuccess,
+  setIsSignupUserSuccessToFalse,
 }) => {
   useEffect(() => {
-    if (isCreatedUserSuccess) {
-      setIsCreatedUserSuccessToFalse();
+    if (isSignupUserSuccess) {
+      setIsSignupUserSuccessToFalse();
     }
   }, []);
   return (
@@ -87,8 +87,8 @@ const Home = ({
 
 Home.propTypes = {
   isLogged: PropTypes.bool.isRequired,
-  isCreatedUserSuccess: PropTypes.bool.isRequired,
-  setIsCreatedUserSuccessToFalse: PropTypes.func.isRequired,
+  isSignupUserSuccess: PropTypes.bool.isRequired,
+  setIsSignupUserSuccessToFalse: PropTypes.func.isRequired,
 };
 
 export default Home;

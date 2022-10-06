@@ -15,8 +15,8 @@ const Signup = ({
   changeField,
   handleSignup,
   handleGoBackToHomeToLogin,
-  isCreatedUserSuccess,
-  isCreatedUserError,
+  isSignupUserSuccess,
+  isSignupUserError,
   successMessage,
   errorMessage,
 }) => {
@@ -29,7 +29,7 @@ const Signup = ({
   };
   return (
     <div className="signup">
-      {!isCreatedUserSuccess && (
+      {!isSignupUserSuccess && (
         <>
           <p className="signup-desc">
             Veuillez remplir tous les champs pour créer votre compte.
@@ -115,7 +115,7 @@ const Signup = ({
                   value={price}
                 />
               </div>
-              {isCreatedUserError &&
+              {isSignupUserError &&
                 <p className="signup-creation-form-error">
                   {errorMessage}
                 </p>
@@ -130,7 +130,7 @@ const Signup = ({
           </div>
         </>
       )}
-      {isCreatedUserSuccess &&
+      {isSignupUserSuccess &&
         <div className="signup-creation-success">
           <p className="signup-creation-success-desc">
             {successMessage}
@@ -160,8 +160,8 @@ Signup.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
   handleGoBackToHomeToLogin: PropTypes.func.isRequired,
-  isCreatedUserSuccess: PropTypes.bool.isRequired,
-  isCreatedUserError: PropTypes.bool.isRequired,
+  isSignupUserSuccess: PropTypes.bool.isRequired,
+  isSignupUserError: PropTypes.bool.isRequired,
   successMessage: PropTypes.string.isRequired,
   errorMessage: PropTypes.string.isRequired,
 };

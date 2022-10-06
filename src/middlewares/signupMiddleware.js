@@ -2,15 +2,15 @@ import axios from 'axios';
 
 import { apiBaseUrl } from '../const';
 import {
-  CREATE_USER,
-  createUserSuccess,
-  createUserError,
+  SIGNUP_USER,
+  signupUserSuccess,
+  signupUserError,
 } from '../actions/user';
 
 const signupMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
   switch (action.type) {
-    case CREATE_USER: {
+    case SIGNUP_USER: {
       const options = {
         method: 'POST',
         url: `${apiBaseUrl}/signup`,
@@ -28,10 +28,10 @@ const signupMiddleware = (store) => (next) => (action) => {
       };
       axios(options)
         .then((response) => {
-          store.dispatch(createUserSuccess(response.data));
+          store.dispatch(signupUserSuccess(response.data));
         })
         .catch((response) => {
-          store.dispatch(createUserError(response.response.data));
+          store.dispatch(signupUserError(response.response.data));
         });
       break;
     }

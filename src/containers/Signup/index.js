@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Signup from '../../components/Signup/signup';
 
 import {
-  createUserValue,
-  createUserAction,
+  signupUserValue,
+  signupUserAction,
   goBackToHomeToLogin,
 } from '../../actions/user';
 
@@ -15,18 +15,18 @@ const mapStateToProps = (state) => ({
   passwordConfirm: state.user.passwordConfirm,
   average: state.user.average,
   price: state.user.price,
-  isCreatedUserSuccess: state.user.isCreatedUserSuccess,
-  isCreatedUserError: state.user.isCreatedUserError,
+  isSignupUserSuccess: state.user.isSignupUserSuccess,
+  isSignupUserError: state.user.isSignupUserError,
   successMessage: state.user.successMessage,
   errorMessage: state.user.errorMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   changeField: (newValue, name) => {
-    dispatch(createUserValue(newValue, name));
+    dispatch(signupUserValue(newValue, name));
   },
   handleSignup: () => {
-    dispatch(createUserAction());
+    dispatch(signupUserAction());
   },
   handleGoBackToHomeToLogin: () => {
     dispatch(goBackToHomeToLogin());

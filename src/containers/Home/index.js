@@ -8,11 +8,11 @@ import {
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
-  isCreatedUserSuccess: state.user.isCreatedUserSuccess,
+  isSignupUserSuccess: state.user.isSignupUserSuccess,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setIsCreatedUserSuccessToFalse: () => {
+  setIsSignupUserSuccessToFalse: () => {
     dispatch(goBackToHomeToLogin());
   },
 });
