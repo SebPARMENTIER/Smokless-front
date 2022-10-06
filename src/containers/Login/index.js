@@ -10,8 +10,8 @@ import {
 const mapStateToProps = (state) => ({
   email: state.user.email,
   password: state.user.password,
-  isLoggedUserError: state.user.isLoggedUserError,
-  errorMessage: state.user.errorMessage,
+  isLoginUserError: state.user.isLoginUserError,
+  errorLoginMessage: state.user.errorLoginMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({
