@@ -5,7 +5,6 @@ import './welcome.scss';
 const Welcome = ({
   pseudo,
   isLogged,
-  isDisplayingWelcome,
 }) => {
   return (
     <div className={isLogged ? "welcome welcome-swipe" : "welcome"}>
@@ -19,7 +18,6 @@ const Welcome = ({
 Welcome.propTypes = {
   pseudo: PropTypes.string.isRequired,
   isLogged: PropTypes.bool.isRequired,
-  isDisplayingWelcome: PropTypes.bool.isRequired,
 };
 
 export default Welcome;

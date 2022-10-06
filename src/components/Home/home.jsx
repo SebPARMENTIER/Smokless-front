@@ -26,7 +26,7 @@ const Home = ({
     if (isLogged) {
       const timer = setTimeout(() => {
         setDisplayingWelcome();
-      }, 2000);
+      }, 1500);
       return () => clearTimeout(timer);
     };
   }, [isLogged]);
@@ -48,8 +48,8 @@ const Home = ({
         </div>
       )}
       {isDisplayingWelcome && (<Welcome />)}
-      {isLogged && !isDisplayingWelcome && (
-        <div className="home-elements">
+      {isLogged && (
+        <div className={isDisplayingWelcome ? "home-elements" : "home-elements  home-elements-swipe"}>
           <Link className="home-elements-consumption">
             <p className="home-elements-consumption-text">
               Ma consommation

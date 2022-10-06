@@ -6,10 +6,8 @@
 
   &-swipe{
     transform: translateX(-100%);
-    transition: 2s;
+    transition: all 1s 1s;
   }
-  
-  
 
   &-hello {
     font-size: 2em;
