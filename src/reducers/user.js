@@ -21,6 +21,7 @@ export const initialState = {
   successMessage: '',
   errorMessage: '',
   isLogged: false,
+  isLoggedUserError: false,
   userId: '',
   accessToken: null,
 };
@@ -74,6 +75,14 @@ const reducer = (state = initialState, action = {}) => {
         isLogged: true,
         email: '',
         password: '',
+        isCreatedUserError: false,
+        isLoggedUserError: false,
+      };
+    case LOGIN_USER_ERROR:
+      return {
+        ...state,
+        isLoggedUserError: true,
+        errorMessage: action.data.error,
       };
     case LOGOUT:
       return {

@@ -8,6 +8,7 @@ const Login = ({
   changeField,
   handleLogin,
   isLoggedUserError,
+  errorMessage,
   isLoading
 }) => {
   const handleSubmit = (event) => {
@@ -44,7 +45,7 @@ const Login = ({
           </div>
           {isLoggedUserError && (
             <div className="login-connexion-form-error">
-              Vérifiez vos identifiants de connexion.
+              {errorMessage}
             </div>
           )}
           {isLoading && (
@@ -85,6 +86,7 @@ Login.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
   isLoggedUserError: PropTypes.bool.isRequired,
+  errorMessage: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired
 };
 
