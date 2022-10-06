@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Login from '../../containers/Login';
@@ -19,7 +20,13 @@ const Home = ({
     if (isSignupUserSuccess) {
       setIsSignupUserSuccessToFalse();
     }
-  }, []);
+    if (isLogged) {
+      const timer = setTimeout(() => {
+        alert('coucou');
+      }, 2000);
+      return () => clearTimeout(timer);
+    };
+  }, [isLogged]);
   return (
     <div className="home">
       {!isLogged && (
@@ -39,7 +46,7 @@ const Home = ({
       )}
       {isLogged && (
         <div className="home-elements">
-          <div className="home-elements-consumption">
+          <Link className="home-elements-consumption">
             <p className="home-elements-consumption-text">
               Ma consommation
             </p>
@@ -48,8 +55,8 @@ const Home = ({
               src={consumption}
               alt="Consommation"
             />
-          </div>
-          <div className="home-elements-statistical">
+          </Link>
+          <Link className="home-elements-statistical">
             <p className="home-elements-statistical-text">
               Mes statistiques
             </p>
@@ -58,8 +65,8 @@ const Home = ({
               src={statistical}
               alt="Statistiques"
             />
-          </div>
-          <div className="home-elements-chat">
+          </Link>
+          <Link className="home-elements-chat">
             <p className="home-elements-chat-text">
               Mes discussions
             </p>
@@ -68,8 +75,11 @@ const Home = ({
               src={chat}
               alt="Discussions"
             />
-          </div>
-          <div className="home-elements-profile">
+          </Link>
+          <Link
+            className="home-elements-profile"
+            to="/profile"
+          >
             <p className="home-elements-profile-text">
               Mes informations
             </p>
@@ -78,7 +88,7 @@ const Home = ({
               src={profile}
               alt="Informations"
             />
-          </div>
+          </Link>
         </div>
       )}
     </div>
