@@ -17,8 +17,8 @@ const mapStateToProps = (state) => ({
   price: state.user.price,
   isSignupUserSuccess: state.user.isSignupUserSuccess,
   isSignupUserError: state.user.isSignupUserError,
-  successMessage: state.user.successMessage,
-  errorMessage: state.user.errorMessage,
+  successSignupMessage: state.user.successSignupMessage,
+  errorSignupMessage: state.user.errorSignupMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({

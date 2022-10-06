@@ -17,8 +17,8 @@ const Signup = ({
   handleGoBackToHomeToLogin,
   isSignupUserSuccess,
   isSignupUserError,
-  successMessage,
-  errorMessage,
+  successSignupMessage,
+  errorSignupMessage,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -117,7 +117,7 @@ const Signup = ({
               </div>
               {isSignupUserError &&
                 <p className="signup-creation-form-error">
-                  {errorMessage}
+                  {errorSignupMessage}
                 </p>
               }
               <button
@@ -133,7 +133,7 @@ const Signup = ({
       {isSignupUserSuccess &&
         <div className="signup-creation-success">
           <p className="signup-creation-success-desc">
-            {successMessage}
+            {successSignupMessage}
           </p>
           <div className="signup-creation-success-page">
             <Link
@@ -162,8 +162,8 @@ Signup.propTypes = {
   handleGoBackToHomeToLogin: PropTypes.func.isRequired,
   isSignupUserSuccess: PropTypes.bool.isRequired,
   isSignupUserError: PropTypes.bool.isRequired,
-  successMessage: PropTypes.string.isRequired,
-  errorMessage: PropTypes.string.isRequired,
+  successSignupMessage: PropTypes.string.isRequired,
+  errorSignupMessage: PropTypes.string.isRequired,
 };
 
 export default Signup;

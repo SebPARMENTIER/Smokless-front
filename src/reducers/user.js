@@ -18,8 +18,8 @@ export const initialState = {
   price: '',
   isSignupUserSuccess: false,
   isSignupUserError: false,
-  successMessage: '',
-  errorMessage: '',
+  successSignupMessage: '',
+  errorSignupMessage: '',
   isLogged: false,
   isLoggedUserError: false,
   userId: '',
@@ -37,7 +37,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isSignupUserSuccess: action.data.isSignupUserSuccess,
-        successMessage: action.data.successMessage,
+        successSignupMessage: action.data.successSignupMessage,
         pseudo: '',
         email: '',
         password: '',
@@ -50,7 +50,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isSignupUserError: true,
-        errorMessage: action.data.error,
+        errorSignupMessage: action.data.error,
       };
     case GO_BACK_TO_HOME_TO_LOGIN:
       return {
