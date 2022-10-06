@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Login from '../Login/login';
+import Login from '../../containers/Login';
 
 import consumption from '../../assets/consumption.png';
 import statistical from '../../assets/statistical.png';

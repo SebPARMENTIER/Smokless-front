@@ -72,11 +72,18 @@ const reducer = (state = initialState, action = {}) => {
         price,
         accessToken,
         isLogged: true,
+        email: '',
+        password: '',
       };
     case LOGOUT:
       return {
         ...state,
         isLogged: false,
+        userId: '',
+        pseudo: '',
+        average: '',
+        price: '',
+        accessToken: null,
       };
     default:
       return state;
