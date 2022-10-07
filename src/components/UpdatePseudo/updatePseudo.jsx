@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 
+import Field from '../Field/field';
 import Loading from '../Loading/loading';
 import './updatePseudo.scss';
 
 const UpdatePseudo = ({
+  pseudo,
   newPseudo,
   password,
   changeField,
@@ -88,7 +90,8 @@ const UpdatePseudo = ({
   );
 };
 
-Profile.propTypes = {
+UpdatePseudo.propTypes = {
+  pseudo: PropTypes.string.isRequired,
   newPseudo: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,

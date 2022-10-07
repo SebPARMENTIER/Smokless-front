@@ -6,6 +6,7 @@ import Home from '../../containers/Home';
 import Footer from '../Footer/footer';
 import Signup from '../../containers/Signup';
 import Profile from '../../containers/Profile';
+import UpdatePseudo from '../UpdatePseudo/updatePseudo';
 import Error from '../Error/error';
 
 import './app.scss'
@@ -22,7 +23,10 @@ const App = ({
           <Route exact path='/signup' element={<Signup />} />
         )}
         {isLogged && (
-          <Route exact path='/profile' element={<Profile />} />
+          <>
+            <Route exact path='/profile' element={<Profile />} />
+            <Route exact path='/profile/pseudo' element={<UpdatePseudo />} />
+          </>
         )}
         <Route path='*' element={<Error />} />
       </Routes>
