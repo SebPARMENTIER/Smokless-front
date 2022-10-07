@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
 import Field from "../Field/field";
+import Loading from '../Loading/loading';
 
 import './login.scss';
 

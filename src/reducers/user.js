@@ -27,6 +27,7 @@ export const initialState = {
   userId: '',
   accessToken: null,
   isDisplayingWelcome: false,
+  isLoading: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
