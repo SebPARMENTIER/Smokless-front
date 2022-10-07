@@ -1,0 +1,67 @@
+.profile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+
+  &-desc {
+    font-weight: bold;
+    font-size: 1.8em;
+    margin-bottom: 0.3em;
+    padding: 0.2em;
+    border: 5px solid #ff8d3f;
+    border-top: 1px solid #ff8d3f;
+    border-radius: 15px;
+  }
+
+  &-pseudo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fd841f
+  }
+
+  &-elements {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+
+    &-update, &-delete {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &-pseudo, &-password, &-average, &-price, &-account {
+        width: 100%;
+        font-family: 'Didact Gothic', sans-serif;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1em;
+        padding: 0.5em 1em;
+        background-color: #fd841f;
+        color: wheat;
+        text-shadow: 1px 1px 1px saddlebrown;
+        border: 5px solid #fcc875;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px saddlebrown;
+      }
+
+      &-account {
+        background-color: #ed5752;
+      }
+    }
+  }
+
+  &-link {
+    margin-top: 0.5em;
+
+    &-back {
+      color: #fd841f;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
+import './profile.scss';
+
 const Profile = ({
   pseudo,
 }) => {
@@ -34,7 +36,7 @@ const Profile = ({
             className="profile-elements-update-average"
             to="/profile/average"
           >
-            Modifier votre consommation moyenne de cigarettes par jour
+            Modifier votre moyenne de cigarettes par jour
           </Link>
         </div>
         <div className="profile-elements-update">
@@ -53,6 +55,14 @@ const Profile = ({
             Supprimer votre compte
           </Link>
         </div>
+      </div>
+      <div className="profile-link">
+        <Link
+          className="profile-link-back"
+          to="/"
+        >
+          Retour
+        </Link>
       </div>
     </div>
   );
