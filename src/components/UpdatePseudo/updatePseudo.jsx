@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Field from '../Field/field';
 import Loading from '../Loading/loading';
@@ -71,21 +72,21 @@ const UpdatePseudo = ({
           )}
         </form>
       </div>
-      {isUpdatePseudoSuccess && (
-        <div className="updatePseudo-success">
+      <div className="updatePseudo-success">
+        {isUpdatePseudoSuccess && (
           <p className="updatePseudo-success-desc">
             {successUpdateMessage}
           </p>
-          <div className="updatePseudo-success-page">
-            <Link
-              className="updatePseudo-success-page-link"
-              to="/profile"
-            >
-              Retour
-            </Link>
-          </div>
+        )}
+        <div className="updatePseudo-success-page">
+          <Link
+            className="updatePseudo-success-page-link"
+            to="/profile"
+          >
+            Retour
+          </Link>
         </div>
-      )}
+      </div>
     </div>
   );
 };
