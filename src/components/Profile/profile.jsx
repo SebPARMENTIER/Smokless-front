@@ -34,7 +34,7 @@ const Profile = ({
             className="profile-elements-update-average"
             to="/profile/average"
           >
-            Modifier votre consommation moyenne quotidienne de cigarettes
+            Modifier votre consommation moyenne de cigarettes par jour
           </Link>
         </div>
         <div className="profile-elements-update">
