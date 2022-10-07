@@ -5,7 +5,7 @@ import Header from '../../containers/Header';
 import Home from '../../containers/Home';
 import Footer from '../Footer/footer';
 import Signup from '../../containers/Signup';
-import Profile from '../Profile/profile';
+import Profile from '../../containers/Profile';
 import Error from '../Error/error';
 
 import './app.scss'
