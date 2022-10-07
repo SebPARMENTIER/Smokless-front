@@ -5,12 +5,14 @@ import {
   SIGNUP_USER,
   signupUserSuccess,
   signupUserError,
+  loading,
 } from '../actions/user';
 
 const signupMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
   switch (action.type) {
     case SIGNUP_USER: {
+      store.dispatch(loading());
       const options = {
         method: 'POST',
         url: `${apiBaseUrl}/signup`,
@@ -29,9 +31,11 @@ const signupMiddleware = (store) => (next) => (action) => {
       axios(options)
         .then((response) => {
           store.dispatch(signupUserSuccess(response.data));
+          store.dispatch(loading());
         })
         .catch((response) => {
           store.dispatch(signupUserError(response.response.data));
+          store.dispatch(loading());
         });
       break;
     }

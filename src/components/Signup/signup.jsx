@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Field from "../Field/field";
+import Loading from '../Loading/loading';
 
 import './signup.scss';
 
@@ -19,6 +20,7 @@ const Signup = ({
   isSignupUserError,
   successSignupMessage,
   errorSignupMessage,
+  isLoading,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -120,12 +122,19 @@ const Signup = ({
                   {errorSignupMessage}
                 </p>
               }
-              <button
-                type="submit"
-                className="signup-creation-form-button"
-              >
-                Valider
-              </button>
+              {isLoading && (
+                <div className="signup-creation-form-loading">
+                  <Loading />
+                </div>
+              )}
+              {!isLoading && (
+                <button
+                  type="submit"
+                  className="signup-creation-form-button"
+                >
+                  Valider
+                </button>
+              )}
             </form>
           </div>
         </>
@@ -164,6 +173,7 @@ Signup.propTypes = {
   isSignupUserError: PropTypes.bool.isRequired,
   successSignupMessage: PropTypes.string.isRequired,
   errorSignupMessage: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };
 
 export default Signup;

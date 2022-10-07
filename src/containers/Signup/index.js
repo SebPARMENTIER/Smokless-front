@@ -19,6 +19,7 @@ const mapStateToProps = (state) => ({
   isSignupUserError: state.user.isSignupUserError,
   successSignupMessage: state.user.successSignupMessage,
   errorSignupMessage: state.user.errorSignupMessage,
+  isLoading: state.user.isLoading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
