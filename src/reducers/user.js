@@ -8,6 +8,7 @@ import {
   LOGIN_USER_ERROR,
   LOGOUT,
   DISPLAY_WELCOME,
+  LOADING,
 } from '../actions/user';
 
 export const initialState = {
@@ -103,6 +104,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isDisplayingWelcome: false,
+      };
+    case LOADING:
+      return {
+        ...state,
+        isLoading: !state.isLoading,
       };
     default:
       return state;

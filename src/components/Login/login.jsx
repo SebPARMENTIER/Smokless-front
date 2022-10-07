@@ -13,7 +13,7 @@ const Login = ({
   handleLogin,
   isLoginUserError,
   errorLoginMessage,
-  isLoading
+  isLoading,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -91,7 +91,7 @@ Login.propTypes = {
   handleLogin: PropTypes.func.isRequired,
   isLoginUserError: PropTypes.bool.isRequired,
   errorLoginMessage: PropTypes.string.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
 };
 
 export default Login;

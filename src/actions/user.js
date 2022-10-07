@@ -9,6 +9,7 @@ export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 export const LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
 export const LOGOUT = 'LOGOUT';
 export const DISPLAY_WELCOME = 'DISPLAY_WELCOME';
+export const LOADING = 'LOADING';
 
 export const signupUserValue = (newValue, name) => ({
   type: SET_SIGNUP_VALUE,
@@ -39,3 +40,5 @@ export const loginUserError = (data) => ({ type: LOGIN_USER_ERROR, data });
 export const logout = () => ({ type: LOGOUT });
 
 export const displayWelcome = () => ({ type: DISPLAY_WELCOME });
+
+export const loading = () => ({ type: LOADING });

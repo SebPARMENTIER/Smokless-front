@@ -5,12 +5,14 @@ import {
   LOGIN_USER,
   loginUserSuccess,
   loginUserError,
+  loading,
 } from '../actions/user';
 
 const loginMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
   switch (action.type) {
     case LOGIN_USER: {
+      store.dispatch(loading());
       const options = {
         method: 'POST',
         url: `${apiBaseUrl}/login`,
@@ -25,9 +27,11 @@ const loginMiddleware = (store) => (next) => (action) => {
       axios(options)
         .then((response) => {
           store.dispatch(loginUserSuccess(response.data));
+          store.dispatch(loading());
         })
         .catch((response) => {
           store.dispatch(loginUserError(response.response.data));
+          store.dispatch(loading());
         });
       break;
     }
