@@ -7,7 +7,7 @@ const Welcome = ({
   isLogged,
 }) => {
   return (
-    <div className={isLogged ? "welcome welcome-swipe" : "welcome"}>
+    <div className={isLogged ? "welcome" : "welcome welcome-swipe"}>
       <p className="welcome-hello">
         Bonjour <span className="welcome-hello-span">{pseudo}</span> !
       </p>

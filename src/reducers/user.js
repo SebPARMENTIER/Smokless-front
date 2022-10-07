@@ -26,7 +26,7 @@ export const initialState = {
   errorLoginMessage: '',
   userId: '',
   accessToken: null,
-  isDisplayingWelcome: true,
+  isDisplayingWelcome: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -80,6 +80,7 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         isSignupUserError: false,
         isLoginUserError: false,
+        isDisplayingWelcome: true,
       };
     case LOGIN_USER_ERROR:
       return {
@@ -96,7 +97,6 @@ const reducer = (state = initialState, action = {}) => {
         average: '',
         price: '',
         accessToken: null,
-        isDisplayingWelcome: true,
       };
     case DISPLAY_WELCOME:
       return {

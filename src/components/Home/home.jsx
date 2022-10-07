@@ -49,7 +49,7 @@ const Home = ({
       )}
       {isDisplayingWelcome && (<Welcome />)}
       {isLogged && (
-        <div className={isDisplayingWelcome ? "home-elements" : "home-elements  home-elements-swipe"}>
+        <div className={isDisplayingWelcome ? "home-elements" : "home-elements home-elements-swipe"}>
           <Link className="home-elements-consumption">
             <p className="home-elements-consumption-text">
               Ma consommation
