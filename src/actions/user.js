@@ -10,6 +10,11 @@ export const LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
 export const LOGOUT = 'LOGOUT';
 export const DISPLAY_WELCOME = 'DISPLAY_WELCOME';
 export const LOADING = 'LOADING';
+export const SET_UPDATE_PSEUDO_VALUE = 'SET_UPDATE_PSEUDO_VALUE';
+export const UPDATE_PSEUDO = 'UPDATE_PSEUDO';
+export const UPDATE_PSEUDO_SUCCESS = 'UPDATE_PSEUDO_SUCCESS';
+export const UPDATE_PSEUDO_ERROR = 'UPDATE_PSEUDO_ERROR';
+export const BACK_TO_PROFILE = 'BACK_TO_PROFILE';
 
 export const signupUserValue = (newValue, name) => ({
   type: SET_SIGNUP_VALUE,
@@ -42,3 +47,17 @@ export const logout = () => ({ type: LOGOUT });
 export const displayWelcome = () => ({ type: DISPLAY_WELCOME });
 
 export const loading = () => ({ type: LOADING });
+
+export const updatePseudoValue = (newValue, name) => ({
+  type: SET_UPDATE_PSEUDO_VALUE,
+  value: newValue,
+  name,
+});
+
+export const updatePseudoAction = () => ({ type: UPDATE_PSEUDO });
+
+export const updatePseudoSuccess = (data) => ({ type: UPDATE_PSEUDO_SUCCESS, data });
+
+export const updatePseudoError = (data) => ({ type: UPDATE_PSEUDO_ERROR, data });
+
+export const backToProfileAction = () => ({ type: BACK_TO_PROFILE });
