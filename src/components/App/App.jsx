@@ -6,7 +6,7 @@ import Home from '../../containers/Home';
 import Footer from '../Footer/footer';
 import Signup from '../../containers/Signup';
 import Profile from '../../containers/Profile';
-import UpdatePseudo from '../UpdatePseudo/updatePseudo';
+import UpdatePseudo from '../../containers/UpdatePseudo';
 import Error from '../Error/error';
 
 import './app.scss'
