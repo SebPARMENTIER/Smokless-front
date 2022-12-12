@@ -1,6 +1,7 @@
 .error {
   width: 100%;
   height: 100%;
+  padding-top: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,10 +14,13 @@
   }
 
   &-desc {
+    margin-bottom: 3em;
     color: #fd841f;
   }
 
   &-picture {
+    margin-bottom: 3em;
+
     &-image {
       max-width: 100%;
     }
