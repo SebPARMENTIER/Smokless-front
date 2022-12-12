@@ -9,6 +9,10 @@ import {
   LOGOUT,
   DISPLAY_WELCOME,
   LOADING,
+  SET_UPDATE_PSEUDO_VALUE,
+  UPDATE_PSEUDO_SUCCESS,
+  UPDATE_PSEUDO_ERROR,
+  BACK_TO_PROFILE,
 } from '../actions/user';
 
 export const initialState = {
@@ -29,6 +33,11 @@ export const initialState = {
   accessToken: null,
   isDisplayingWelcome: false,
   isLoading: false,
+  newPseudo: '',
+  isUpdatePseudoSuccess: false,
+  isUpdatePseudoError: false,
+  successUpdateMessage: '',
+  errorUpdateMessage: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -68,7 +77,12 @@ const reducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     case LOGIN_USER_SUCCESS:
-      const { id, pseudo, average, price } = action.data.userData;
+      const {
+        id,
+        pseudo,
+        average,
+        price,
+      } = action.data.userData;
       const { accessToken } = action.data;
       return {
         ...state,
@@ -95,10 +109,14 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isLogged: false,
         userId: '',
+        password: '',
         pseudo: '',
+        newPseudo: '',
         average: '',
         price: '',
         accessToken: null,
+        isUpdatePseudoSuccess: false,
+        isUpdatePseudoError: false,
       };
     case DISPLAY_WELCOME:
       return {
@@ -109,6 +127,37 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLoading: !state.isLoading,
+      };
+    case SET_UPDATE_PSEUDO_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case UPDATE_PSEUDO_SUCCESS:
+      return {
+        ...state,
+        isUpdatePseudoSuccess: true,
+        successUpdateMessage: action.data.successUpdateMessage,
+        isUpdatePseudoError: false,
+        pseudo: state.newPseudo,
+        newPseudo: '',
+        password: '',
+      };
+    case UPDATE_PSEUDO_ERROR:
+      return {
+        ...state,
+        isUpdatePseudoError: true,
+        errorUpdateMessage: action.data.error,
+      };
+    case BACK_TO_PROFILE:
+      return {
+        ...state,
+        newPseudo: '',
+        password: '',
+        isUpdatePseudoSuccess: false,
+        isUpdatePseudoError: false,
+        successUpdateMessage: '',
+        errorUpdateMessage: '',
       };
     default:
       return state;
