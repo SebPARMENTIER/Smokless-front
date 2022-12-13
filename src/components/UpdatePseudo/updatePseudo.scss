@@ -24,6 +24,7 @@
   }
 
   &-infos {
+    width: 100%;
     margin-top: 1em;
 
     &-form {
@@ -33,13 +34,20 @@
       justify-content: start;
       align-items: center;
 
+      &-label {
+        color: grey;
+        font-weight: bold;
+      }
+
       &-field {
         width: 100%;
         text-align: center;
 
         &-newPseudo, &-password {
+          width: 80%;
           height: 2em;
           margin: 0.3em 0 0.5em 0;
+          border: 2px solid #ff8d3f;
           border-radius: 5px;
           text-align: center;
         }
@@ -79,7 +87,6 @@
 
       &-link {
         font-family: 'Didact Gothic', sans-serif;
-        font-size: 0.8em;
         text-align: center;
         color: #fd841f;
       }
