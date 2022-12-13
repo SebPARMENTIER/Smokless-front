@@ -12,6 +12,9 @@ import {
   SET_UPDATE_PSEUDO_VALUE,
   UPDATE_PSEUDO_SUCCESS,
   UPDATE_PSEUDO_ERROR,
+  SET_UPDATE_PASSWORD_VALUE,
+  UPDATE_PASSWORD_SUCCESS,
+  UPDATE_PASSWORD_ERROR,
   BACK_TO_PROFILE,
 } from '../actions/user';
 
@@ -38,6 +41,10 @@ export const initialState = {
   isUpdatePseudoError: false,
   successUpdateMessage: '',
   errorUpdateMessage: '',
+  newPassword: '',
+  newPasswordConfirm: '',
+  isUpdatePasswordSuccess: false,
+  isUpdatePasswordError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -114,9 +121,13 @@ const reducer = (state = initialState, action = {}) => {
         newPseudo: '',
         average: '',
         price: '',
+        newPassword: '',
+        newPasswordConfirm: '',
         accessToken: null,
         isUpdatePseudoSuccess: false,
         isUpdatePseudoError: false,
+        isUpdatePasswordSuccess: false,
+        isUpdatePasswordError: false,
       };
     case DISPLAY_WELCOME:
       return {
@@ -149,6 +160,24 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePseudoError: true,
         errorUpdateMessage: action.data.error,
       };
+    case SET_UPDATE_PASSWORD_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case UPDATE_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        isUpdatePasswordSuccess: true,
+        successUpdateMessage: action.data.successUpdateMessage,
+        isUpdatePasswordError: false,
+      };
+    case UPDATE_PASSWORD_ERROR:
+      return {
+        ...state,
+        isUpdatePasswordError: true,
+        errorUpdateMessage: action.data.error,
+      };
     case BACK_TO_PROFILE:
       return {
         ...state,
@@ -156,6 +185,10 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         isUpdatePseudoSuccess: false,
         isUpdatePseudoError: false,
+        newPassword: '',
+        newPasswordConfirm: '',
+        isUpdatePasswordSuccess: false,
+        isUpdatePasswordError: false,
         successUpdateMessage: '',
         errorUpdateMessage: '',
       };
