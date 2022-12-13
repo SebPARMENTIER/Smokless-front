@@ -14,6 +14,10 @@ export const SET_UPDATE_PSEUDO_VALUE = 'SET_UPDATE_PSEUDO_VALUE';
 export const UPDATE_PSEUDO = 'UPDATE_PSEUDO';
 export const UPDATE_PSEUDO_SUCCESS = 'UPDATE_PSEUDO_SUCCESS';
 export const UPDATE_PSEUDO_ERROR = 'UPDATE_PSEUDO_ERROR';
+export const SET_UPDATE_PASSWORD_VALUE = 'SET_UPDATE_PASSWORD_VALUE';
+export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
+export const UPDATE_PASSWORD_SUCCESS = 'UPDATE_PASSWORD_SUCCESS';
+export const UPDATE_PASSWORD_ERROR = 'UPDATE_PASSWORD_ERROR';
 export const BACK_TO_PROFILE = 'BACK_TO_PROFILE';
 
 export const signupUserValue = (newValue, name) => ({
@@ -59,5 +63,17 @@ export const updatePseudoAction = () => ({ type: UPDATE_PSEUDO });
 export const updatePseudoSuccess = (data) => ({ type: UPDATE_PSEUDO_SUCCESS, data });
 
 export const updatePseudoError = (data) => ({ type: UPDATE_PSEUDO_ERROR, data });
+
+export const updatePasswordValue = (newValue, name) => ({
+  type: SET_UPDATE_PASSWORD_VALUE,
+  value: newValue,
+  name,
+});
+
+export const updatePasswordAction = () => ({ type: UPDATE_PASSWORD });
+
+export const updatePasswordSuccess = (data) => ({ type: UPDATE_PASSWORD_SUCCESS, data });
+
+export const updatePasswordError = (data) => ({ type: UPDATE_PASSWORD_ERROR, data });
 
 export const backToProfileAction = () => ({ type: BACK_TO_PROFILE });
