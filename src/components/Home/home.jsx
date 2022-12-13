@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Login from '../../containers/Login';
-import Welcome from '../../containers/Welcome';
 
 import consumption from '../../assets/consumption.png';
 import statistical from '../../assets/statistical.png';
@@ -18,6 +17,7 @@ const Home = ({
   setIsSignupUserSuccessToFalse,
   isDisplayingWelcome,
   setDisplayingWelcome,
+  pseudo,
 }) => {
   useEffect(() => {
     if (isSignupUserSuccess) {
@@ -47,53 +47,59 @@ const Home = ({
           </div>
         </div>
       )}
-      {isDisplayingWelcome && (<Welcome />)}
       {isLogged && (
-        <div className={isDisplayingWelcome ? "home-elements" : "home-elements home-elements-swipe"}>
-          <Link className="home-elements-consumption">
-            <p className="home-elements-consumption-text">
-              Ma consommation
+        <>
+          <div className={isDisplayingWelcome ? "home-elements-welcome" : "home-elements-welcome home-elements-welcome-swipe"}>
+            <p className="home-elements-welcome-hello">
+              Bonjour <span className="home-elements-welcome-hello-span">{pseudo}</span> !
             </p>
-            <img
-              className="home-elements-consumption-image"
-              src={consumption}
-              alt="Consommation"
-            />
-          </Link>
-          <Link className="home-elements-statistical">
-            <p className="home-elements-statistical-text">
-              Mes statistiques
-            </p>
-            <img
-              className="home-elements-statistical-image"
-              src={statistical}
-              alt="Statistiques"
-            />
-          </Link>
-          <Link className="home-elements-chat">
-            <p className="home-elements-chat-text">
-              Mes discussions
-            </p>
-            <img
-              className="home-elements-chat-image"
-              src={chat}
-              alt="Discussions"
-            />
-          </Link>
-          <Link
-            className="home-elements-profile"
-            to="/profile"
-          >
-            <p className="home-elements-profile-text">
-              Mes informations
-            </p>
-            <img
-              className="home-elements-profile-image"
-              src={profile}
-              alt="Informations"
-            />
-          </Link>
-        </div>
+          </div>
+          <div className={isDisplayingWelcome ? "home-elements" : "home-elements home-elements-swipe"}>
+            <Link className="home-elements-consumption">
+              <p className="home-elements-consumption-text">
+                Ma consommation
+              </p>
+              <img
+                className="home-elements-consumption-image"
+                src={consumption}
+                alt="Consommation"
+              />
+            </Link>
+            <Link className="home-elements-statistical">
+              <p className="home-elements-statistical-text">
+                Mes statistiques
+              </p>
+              <img
+                className="home-elements-statistical-image"
+                src={statistical}
+                alt="Statistiques"
+              />
+            </Link>
+            <Link className="home-elements-chat">
+              <p className="home-elements-chat-text">
+                Mes discussions
+              </p>
+              <img
+                className="home-elements-chat-image"
+                src={chat}
+                alt="Discussions"
+              />
+            </Link>
+            <Link
+              className="home-elements-profile"
+              to="/profile"
+            >
+              <p className="home-elements-profile-text">
+                Mes informations
+              </p>
+              <img
+                className="home-elements-profile-image"
+                src={profile}
+                alt="Informations"
+              />
+            </Link>
+          </div>
+        </>
       )}
     </div>
   );
@@ -105,6 +111,7 @@ Home.propTypes = {
   setIsSignupUserSuccessToFalse: PropTypes.func.isRequired,
   isDisplayingWelcome: PropTypes.bool.isRequired,
   setDisplayingWelcome: PropTypes.func.isRequired,
+  pseudo: PropTypes.string.isRequired,
 };
 
 export default Home;

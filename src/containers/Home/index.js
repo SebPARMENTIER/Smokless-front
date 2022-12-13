@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
   isSignupUserSuccess: state.user.isSignupUserSuccess,
   isDisplayingWelcome: state.user.isDisplayingWelcome,
+  pseudo: state.user.pseudo,
 });
 
 const mapDispatchToProps = (dispatch) => ({

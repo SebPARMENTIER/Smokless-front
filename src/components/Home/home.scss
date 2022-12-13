@@ -12,6 +12,27 @@
     position: fixed;
     right: -100%;
 
+    &-welcome {
+      height: 50%;
+      position: fixed;
+      right: 25%;
+      top: 25%;
+
+      &-swipe {
+        transform: translateX(-250%);
+        transition: 1s;
+      }
+
+      &-hello {
+        font-size: 2em;
+
+        &-span {
+          color: #fd841f;
+          font-weight: bold;
+        }
+      }
+    }
+
     &-swipe {
       transform: translateX(-100%);
       transition: 1s;
