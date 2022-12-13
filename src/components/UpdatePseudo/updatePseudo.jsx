@@ -40,19 +40,25 @@ const UpdatePseudo = ({
             onSubmit={handleSubmit}
           >
             <div className="updatePseudo-infos-form-field">
+              <label className="updatePseudo-infos-form-label">
+                Nouveau Pseudo
+              </label>
               <Field
-                className='updatePseudo-infos-form-field-newPseudo'
+                className="updatePseudo-infos-form-field-newPseudo"
                 name="newPseudo"
-                type='text'
-                placeholder='Nouveau Pseudo...'
+                type="text"
+                placeholder="Nouveau Pseudo..."
                 onChange={changeField}
                 value={newPseudo}
               />
+              <label className="updatePseudo-infos-form-label">
+                Mot de passe
+              </label>
               <Field
-                className='updatePseudo-infos-form-field-password'
-                name='password'
-                type='password'
-                placeholder='Mot de passe...'
+                className="updatePseudo-infos-form-field-password"
+                name="password"
+                type="password"
+                placeholder="Mot de passe..."
                 onChange={changeField}
                 value={password}
               />
@@ -86,7 +92,7 @@ const UpdatePseudo = ({
           <Link
             className="updatePseudo-success-page-link"
             to="/profile"
-            onClick={handleBackToProfile}
+            onClick={handleClickBackToProfile}
           >
             Retour
           </Link>
