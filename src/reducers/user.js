@@ -2,7 +2,8 @@ import {
   SET_SIGNUP_VALUE,
   SIGNUP_USER_SUCCESS,
   SIGNUP_USER_ERROR,
-  GO_BACK_TO_HOME_TO_LOGIN,
+  GO_TO_HOME,
+  GO_TO_SIGNUP,
   SET_LOGIN_VALUE,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_ERROR,
@@ -15,16 +16,25 @@ import {
   SET_UPDATE_PASSWORD_VALUE,
   UPDATE_PASSWORD_SUCCESS,
   UPDATE_PASSWORD_ERROR,
+  SET_UPDATE_AVERAGE_VALUE,
+  UPDATE_AVERAGE_SUCCESS,
+  UPDATE_AVERAGE_ERROR,
   BACK_TO_PROFILE,
 } from '../actions/user';
 
 export const initialState = {
+  userId: '',
   pseudo: '',
+  newPseudo: '',
   email: '',
   password: '',
   passwordConfirm: '',
+  newPassword: '',
+  newPasswordConfirm: '',
   average: '',
+  newAverage: '',
   price: '',
+  accessToken: null,
   isSignupUserSuccess: false,
   isSignupUserError: false,
   successSignupMessage: '',
@@ -32,17 +42,12 @@ export const initialState = {
   isLogged: false,
   isLoginUserError: false,
   errorLoginMessage: '',
-  userId: '',
-  accessToken: null,
   isDisplayingWelcome: false,
   isLoading: false,
-  newPseudo: '',
   isUpdatePseudoSuccess: false,
   isUpdatePseudoError: false,
   successUpdateMessage: '',
   errorUpdateMessage: '',
-  newPassword: '',
-  newPasswordConfirm: '',
   isUpdatePasswordSuccess: false,
   isUpdatePasswordError: false,
 };
@@ -73,10 +78,34 @@ const reducer = (state = initialState, action = {}) => {
         isSignupUserError: true,
         errorSignupMessage: action.data.error,
       };
-    case GO_BACK_TO_HOME_TO_LOGIN:
+    case GO_TO_HOME:
       return {
         ...state,
         isSignupUserSuccess: false,
+        email: '',
+        newPseudo: '',
+        password: '',
+        isUpdatePseudoSuccess: false,
+        isUpdatePseudoError: false,
+        newPassword: '',
+        newPasswordConfirm: '',
+        isUpdatePasswordSuccess: false,
+        isUpdatePasswordError: false,
+        successUpdateMessage: '',
+        errorUpdateMessage: '',
+        newAverage: '',
+        isUpdateAverageSuccess: false,
+        isUpdateAverageError: false,
+      };
+    case GO_TO_SIGNUP:
+      return {
+        ...state,
+        pseudo: '',
+        email: '',
+        password: '',
+        passwordConfirm: '',
+        average: '',
+        price: '',
       };
     case SET_LOGIN_VALUE:
       return {
@@ -117,9 +146,11 @@ const reducer = (state = initialState, action = {}) => {
         isLogged: false,
         userId: '',
         password: '',
+        passwordConfirm: '',
         pseudo: '',
         newPseudo: '',
         average: '',
+        newAverage: '',
         price: '',
         newPassword: '',
         newPasswordConfirm: '',
@@ -128,6 +159,8 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePseudoError: false,
         isUpdatePasswordSuccess: false,
         isUpdatePasswordError: false,
+        isUpdateAverageSuccess: false,
+        isUpdateAverageError: false,
       };
     case DISPLAY_WELCOME:
       return {
@@ -178,6 +211,25 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePasswordError: true,
         errorUpdateMessage: action.data.error,
       };
+    case SET_UPDATE_AVERAGE_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case UPDATE_AVERAGE_SUCCESS:
+      return {
+        ...state,
+        average: state.newAverage,
+        isUpdateAverageSuccess: true,
+        successUpdateMessage: action.data.successUpdateMessage,
+        isUpdateAverageError: false,
+      };
+    case UPDATE_AVERAGE_ERROR:
+      return {
+        ...state,
+        isUpdateAverageError: true,
+        errorUpdateMessage: action.data.error,
+      };
     case BACK_TO_PROFILE:
       return {
         ...state,
@@ -191,6 +243,9 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePasswordError: false,
         successUpdateMessage: '',
         errorUpdateMessage: '',
+        newAverage: '',
+        isUpdateAverageSuccess: false,
+        isUpdateAverageError: false,
       };
     default:
       return state;
