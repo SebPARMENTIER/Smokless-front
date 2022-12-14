@@ -11,7 +11,7 @@
   }
 
   &-creation {
-    height: 90%;
+    height: 75%;
 
     &-form {
       height: 100%;
@@ -92,6 +92,15 @@
         border: 5px solid #fcc875;
         border-radius: 10px;
         box-shadow: 3px 3px 3px saddlebrown;
+        }
+      }
+
+      &-back {
+
+        &-link {
+          font-family: 'Didact Gothic', sans-serif;
+          text-align: center;
+          color: #fd841f;
         }
       }
     }
