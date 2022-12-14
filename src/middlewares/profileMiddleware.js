@@ -8,6 +8,9 @@ import {
   UPDATE_PASSWORD,
   updatePasswordSuccess,
   updatePasswordError,
+  UPDATE_AVERAGE,
+  updateAverageSuccess,
+  updateAverageError,
   loading,
 } from '../actions/user';
 
@@ -63,6 +66,32 @@ const profileMiddleware = (store) => (next) => (action) => {
         })
         .catch((response) => {
           store.dispatch(updatePasswordError(response.response.data));
+          store.dispatch(loading());
+        });
+      break;
+    }
+    case UPDATE_AVERAGE: {
+      store.dispatch(loading());
+      const options = {
+        method: 'PATCH',
+        url: `${apiBaseUrl}/user/average`,
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.accessToken}`,
+        },
+        data: {
+          id: state.user.userId,
+          average: state.user.newAverage,
+          password: state.user.password,
+        },
+      };
+      axios(options)
+        .then((response) => {
+          store.dispatch(updateAverageSuccess(response.data));
+          store.dispatch(loading());
+        })
+        .catch((response) => {
+          store.dispatch(updateAverageError(response.response.data));
           store.dispatch(loading());
         });
       break;
