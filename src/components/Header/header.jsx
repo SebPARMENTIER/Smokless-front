@@ -10,9 +10,13 @@ import './header.scss';
 const Header = ({
   isLogged,
   onClickLogout,
+  handleGoToHome,
 }) => {
   const handleLogout = () => {
     onClickLogout();
+  };
+  const handleClickGoToHome = () => {
+    handleGoToHome();
   };
   return (
     <div className="header">
@@ -21,6 +25,7 @@ const Header = ({
           <Link
             className="header-elements-home-link"
             to="/"
+            onClick={handleClickGoToHome}
           >
             <img className="header-elements-home-link-image" src={home} alt="home" />
           </Link>
@@ -47,6 +52,7 @@ const Header = ({
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   onClickLogout: PropTypes.func.isRequired,
+  handleGoToHome: PropTypes.func.isRequired,
 };
 
 export default Header;
