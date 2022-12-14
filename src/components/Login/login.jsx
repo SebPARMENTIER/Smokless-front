@@ -14,10 +14,14 @@ const Login = ({
   isLoginUserError,
   errorLoginMessage,
   isLoading,
+  handleGoToSignup,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleLogin();
+  };
+  const handleClickGoToSignup = () => {
+    handleGoToSignup();
   };
   return (
     <div className="login">
@@ -75,6 +79,7 @@ const Login = ({
           <Link
             className="login-signup-page-link"
             to="/signup"
+            onClick={handleClickGoToSignup}
           >
             Se créer un compte
           </Link>
@@ -92,6 +97,7 @@ Login.propTypes = {
   isLoginUserError: PropTypes.bool.isRequired,
   errorLoginMessage: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  handleGoToSignup: PropTypes.func.isRequired,
 };
 
 export default Login;
