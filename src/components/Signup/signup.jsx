@@ -15,7 +15,7 @@ const Signup = ({
   price,
   changeField,
   handleSignup,
-  handleGoBackToHomeToLogin,
+  handleGoToHome,
   isSignupUserSuccess,
   isSignupUserError,
   successSignupMessage,
@@ -26,8 +26,8 @@ const Signup = ({
     event.preventDefault();
     handleSignup();
   };
-  const handleClickToGoBackToHomeToLogin = () => {
-    handleGoBackToHomeToLogin();
+  const handleClickGoToHome = () => {
+    handleGoToHome();
   };
   return (
     <div className="signup">
@@ -139,22 +139,35 @@ const Signup = ({
           </div>
         </>
       )}
-      {isSignupUserSuccess &&
-        <div className="signup-creation-success">
-          <p className="signup-creation-success-desc">
-            {successSignupMessage}
-          </p>
-          <div className="signup-creation-success-page">
+      <div className="signup-creation-success">
+        {isSignupUserSuccess && (
+          <>
+            <p className="signup-creation-success-desc">
+              {successSignupMessage}
+            </p>
+            <div className="signup-creation-success-page">
+              <Link
+                className="signup-creation-success-page-link"
+                to="/"
+                onClick={handleClickGoToHome}
+              >
+              Se connecter
+              </Link>
+            </div>
+          </>
+        )}
+        {!isSignupUserSuccess && (
+          <div className="signup-creation-success-back">
             <Link
-              className="signup-creation-success-page-link"
+              className="signup-creation-success-back-link"
               to="/"
-              onClick={handleClickToGoBackToHomeToLogin}
+              onClick={handleClickGoToHome}
             >
-            Se connecter
+              Retour
             </Link>
           </div>
-        </div>
-      }
+        )}
+      </div>
     </div>
   );
 };
@@ -168,7 +181,7 @@ Signup.propTypes = {
   price: PropTypes.any.isRequired,
   changeField: PropTypes.func.isRequired,
   handleSignup: PropTypes.func.isRequired,
-  handleGoBackToHomeToLogin: PropTypes.func.isRequired,
+  handleGoToHome: PropTypes.func.isRequired,
   isSignupUserSuccess: PropTypes.bool.isRequired,
   isSignupUserError: PropTypes.bool.isRequired,
   successSignupMessage: PropTypes.string.isRequired,
