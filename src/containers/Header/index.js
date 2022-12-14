@@ -4,6 +4,7 @@ import Home from '../../components/Header/header';
 
 import {
   logout,
+  goToHome,
 } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -13,6 +14,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onClickLogout: () => {
     dispatch(logout());
+  },
+  handleGoToHome: () => {
+    dispatch(goToHome());
   },
 });
 

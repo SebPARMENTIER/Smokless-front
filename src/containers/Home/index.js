@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Home from '../../components/Home/home';
 
 import {
-  goBackToHomeToLogin,
+  goToHome,
   displayWelcome,
 } from '../../actions/user';
 
@@ -16,7 +16,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setIsSignupUserSuccessToFalse: () => {
-    dispatch(goBackToHomeToLogin());
+    dispatch(goToHome());
   },
   setDisplayingWelcome: () => {
     dispatch(displayWelcome());
