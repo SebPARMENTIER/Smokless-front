@@ -19,6 +19,9 @@ import {
   SET_UPDATE_AVERAGE_VALUE,
   UPDATE_AVERAGE_SUCCESS,
   UPDATE_AVERAGE_ERROR,
+  SET_UPDATE_PRICE_VALUE,
+  UPDATE_PRICE_SUCCESS,
+  UPDATE_PRICE_ERROR,
   BACK_TO_PROFILE,
 } from '../actions/user';
 
@@ -34,6 +37,7 @@ export const initialState = {
   average: '',
   newAverage: '',
   price: '',
+  newPrice: '',
   accessToken: null,
   isSignupUserSuccess: false,
   isSignupUserError: false,
@@ -96,6 +100,9 @@ const reducer = (state = initialState, action = {}) => {
         newAverage: '',
         isUpdateAverageSuccess: false,
         isUpdateAverageError: false,
+        newPrice: '',
+        isUpdatePriceSuccess: false,
+        isUpdatePriceError: false,
       };
     case GO_TO_SIGNUP:
       return {
@@ -152,6 +159,7 @@ const reducer = (state = initialState, action = {}) => {
         average: '',
         newAverage: '',
         price: '',
+        newPrice: '',
         newPassword: '',
         newPasswordConfirm: '',
         accessToken: null,
@@ -161,6 +169,8 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePasswordError: false,
         isUpdateAverageSuccess: false,
         isUpdateAverageError: false,
+        isUpdatePriceSuccess: false,
+        isUpdatePriceError: false,
       };
     case DISPLAY_WELCOME:
       return {
@@ -230,6 +240,25 @@ const reducer = (state = initialState, action = {}) => {
         isUpdateAverageError: true,
         errorUpdateMessage: action.data.error,
       };
+    case SET_UPDATE_PRICE_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case UPDATE_PRICE_SUCCESS:
+      return {
+        ...state,
+        price: state.newPrice,
+        isUpdatePriceSuccess: true,
+        successUpdateMessage: action.data.successUpdateMessage,
+        isUpdatePriceError: false,
+      };
+    case UPDATE_PRICE_ERROR:
+      return {
+        ...state,
+        isUpdatePriceError: true,
+        errorUpdateMessage: action.data.error,
+      };
     case BACK_TO_PROFILE:
       return {
         ...state,
@@ -246,6 +275,9 @@ const reducer = (state = initialState, action = {}) => {
         newAverage: '',
         isUpdateAverageSuccess: false,
         isUpdateAverageError: false,
+        newPrice: '',
+        isUpdatePriceSuccess: false,
+        isUpdatePriceError: false,
       };
     default:
       return state;

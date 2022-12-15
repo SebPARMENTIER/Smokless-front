@@ -11,6 +11,9 @@ import {
   UPDATE_AVERAGE,
   updateAverageSuccess,
   updateAverageError,
+  UPDATE_PRICE,
+  updatePriceSuccess,
+  updatePriceError,
   loading,
 } from '../actions/user';
 
@@ -81,7 +84,7 @@ const profileMiddleware = (store) => (next) => (action) => {
         },
         data: {
           id: state.user.userId,
-          average: state.user.newAverage,
+          average: Math.round(state.user.newAverage),
           password: state.user.password,
         },
       };
@@ -92,6 +95,32 @@ const profileMiddleware = (store) => (next) => (action) => {
         })
         .catch((response) => {
           store.dispatch(updateAverageError(response.response.data));
+          store.dispatch(loading());
+        });
+      break;
+    }
+    case UPDATE_PRICE: {
+      store.dispatch(loading());
+      const options = {
+        method: 'PATCH',
+        url: `${apiBaseUrl}/user/price`,
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.accessToken}`,
+        },
+        data: {
+          id: state.user.userId,
+          price: state.user.newPrice,
+          password: state.user.password,
+        },
+      };
+      axios(options)
+        .then((response) => {
+          store.dispatch(updatePriceSuccess(response.data));
+          store.dispatch(loading());
+        })
+        .catch((response) => {
+          store.dispatch(updatePriceError(response.response.data));
           store.dispatch(loading());
         });
       break;
