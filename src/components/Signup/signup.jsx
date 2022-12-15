@@ -97,7 +97,7 @@ const Signup = ({
                   name="average"
                   type="number"
                   step="0.01"
-                  placeholder="Consommation moyenne de cigarettes par jour"
+                  placeholder="Consommation moyenne de cigarettes par jour..."
                   onChange={changeField}
                   value={average}
                 />
@@ -112,7 +112,7 @@ const Signup = ({
                   name="price"
                   type="number"
                   step="0.01"
-                  placeholder="Prix d'un paquet de 20 cigarettes"
+                  placeholder="Prix d'un paquet de 20 cigarettes..."
                   onChange={changeField}
                   value={price}
                 />
