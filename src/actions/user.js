@@ -27,6 +27,10 @@ export const SET_UPDATE_PRICE_VALUE = 'SET_UPDATE_PRICE_VALUE';
 export const UPDATE_PRICE = 'UPDATE_PRICE';
 export const UPDATE_PRICE_SUCCESS = 'UPDATE_PRICE_SUCCESS';
 export const UPDATE_PRICE_ERROR = 'UPDATE_PRICE_ERROR';
+export const SET_DELETE_ACCOUNT_VALUE = 'SET_DELETE_ACCOUNT_VALUE';
+export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
+export const DELETE_ACCOUNT_SUCCESS = 'DELETE_ACCOUNT_SUCCESS';
+export const DELETE_ACCOUNT_ERROR = 'DELETE_ACCOUNT_ERROR';
 export const BACK_TO_PROFILE = 'BACK_TO_PROFILE';
 
 export const signupUserValue = (newValue, name) => ({
@@ -110,5 +114,17 @@ export const updatePriceAction = () => ({ type: UPDATE_PRICE });
 export const updatePriceSuccess = (data) => ({ type: UPDATE_PRICE_SUCCESS, data });
 
 export const updatePriceError = (data) => ({ type: UPDATE_PRICE_ERROR, data });
+
+export const deleteAccountValue = (newValue, name) => ({
+  type: SET_DELETE_ACCOUNT_VALUE,
+  value: newValue,
+  name,
+});
+
+export const deleteAccountAction = () => ({ type: DELETE_ACCOUNT });
+
+export const deleteAccountSuccess = (data) => ({ type: DELETE_ACCOUNT_SUCCESS, data });
+
+export const deleteAccountError = (data) => ({ type: DELETE_ACCOUNT_ERROR, data });
 
 export const backToProfileAction = () => ({ type: BACK_TO_PROFILE });
