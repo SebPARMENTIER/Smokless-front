@@ -22,6 +22,9 @@ import {
   SET_UPDATE_PRICE_VALUE,
   UPDATE_PRICE_SUCCESS,
   UPDATE_PRICE_ERROR,
+  SET_DELETE_ACCOUNT_VALUE,
+  DELETE_ACCOUNT_SUCCESS,
+  DELETE_ACCOUNT_ERROR,
   BACK_TO_PROFILE,
 } from '../actions/user';
 
@@ -50,10 +53,18 @@ export const initialState = {
   isLoading: false,
   isUpdatePseudoSuccess: false,
   isUpdatePseudoError: false,
-  successUpdateMessage: '',
-  errorUpdateMessage: '',
   isUpdatePasswordSuccess: false,
   isUpdatePasswordError: false,
+  isUpdateAverageSuccess: false,
+  isUpdateAverageError: false,
+  isUpdatePriceSuccess: false,
+  isUpdatePriceError: false,
+  successUpdateMessage: '',
+  errorUpdateMessage: '',
+  isDeleteAccountSuccess: false,
+  isDeleteAccountError: false,
+  successDeleteAccountMessage: '',
+  errorDeleteAccountMessage: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -95,14 +106,18 @@ const reducer = (state = initialState, action = {}) => {
         newPasswordConfirm: '',
         isUpdatePasswordSuccess: false,
         isUpdatePasswordError: false,
-        successUpdateMessage: '',
-        errorUpdateMessage: '',
         newAverage: '',
         isUpdateAverageSuccess: false,
         isUpdateAverageError: false,
         newPrice: '',
         isUpdatePriceSuccess: false,
         isUpdatePriceError: false,
+        successUpdateMessage: '',
+        errorUpdateMessage: '',
+        isDeleteAccountSuccess: false,
+        isDeleteAccountError: false,
+        successDeleteAccountMessage: '',
+        errorDeleteAccountMessage: '',
       };
     case GO_TO_SIGNUP:
       return {
@@ -171,6 +186,12 @@ const reducer = (state = initialState, action = {}) => {
         isUpdateAverageError: false,
         isUpdatePriceSuccess: false,
         isUpdatePriceError: false,
+        successUpdateMessage: '',
+        errorUpdateMessage: '',
+        isDeleteAccountSuccess: false,
+        isDeleteAccountError: false,
+        successDeleteAccountMessage: '',
+        errorDeleteAccountMessage: '',
       };
     case DISPLAY_WELCOME:
       return {
@@ -259,6 +280,25 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePriceError: true,
         errorUpdateMessage: action.data.error,
       };
+    case SET_DELETE_ACCOUNT_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case DELETE_ACCOUNT_SUCCESS:
+      return {
+        ...state,
+        price: state.newPrice,
+        isDeleteAccountSuccess: true,
+        successDeleteAccountMessage: action.data.successDeleteAccountMessage,
+        isDeleteAccountError: false,
+      };
+    case DELETE_ACCOUNT_ERROR:
+      return {
+        ...state,
+        isDeleteAccountError: true,
+        errorDeleteAccountMessage: action.data.error,
+      };
     case BACK_TO_PROFILE:
       return {
         ...state,
@@ -270,14 +310,18 @@ const reducer = (state = initialState, action = {}) => {
         newPasswordConfirm: '',
         isUpdatePasswordSuccess: false,
         isUpdatePasswordError: false,
-        successUpdateMessage: '',
-        errorUpdateMessage: '',
         newAverage: '',
         isUpdateAverageSuccess: false,
         isUpdateAverageError: false,
         newPrice: '',
         isUpdatePriceSuccess: false,
         isUpdatePriceError: false,
+        successUpdateMessage: '',
+        errorUpdateMessage: '',
+        isDeleteAccountSuccess: false,
+        isDeleteAccountError: false,
+        successDeleteAccountMessage: '',
+        errorDeleteAccountMessage: '',
       };
     default:
       return state;
