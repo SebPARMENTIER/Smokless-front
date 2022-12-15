@@ -34,11 +34,13 @@ const UpdateAverage = ({
       <div className="updateAverage-pseudo">
         {pseudo}
       </div>
-      <div className="updateAverage-current">
-        Votre consommation moyenne quotidienne est actuellement de
-        <span className="updateAverage-current-span"> {average} </span>
-        cigarettes.
-      </div>
+      {!successUpdateMessage && (
+        <div className="updateAverage-current">
+          Votre consommation moyenne quotidienne est actuellement de
+          <span className="updateAverage-current-span"> {Math.round(average)} </span>
+          cigarettes.
+        </div>
+      )}
       <div className="updateAverage-infos">
         {!isUpdateAverageSuccess && (
           <form
@@ -50,11 +52,11 @@ const UpdateAverage = ({
                 Nouvelle consommation moyenne de cigarettes par jour
               </label>
               <Field
-                className="updateAverage-infos-form-field-newPseudo"
+                className="updateAverage-infos-form-field-newAverage"
                 name="newAverage"
                 type="number"
                 step="0.01"
-                placeholder="Consommation moyenne de cigarettes par jour"
+                placeholder="Consommation moyenne de cigarettes par jour..."
                 onChange={changeField}
                 value={newAverage}
               />
