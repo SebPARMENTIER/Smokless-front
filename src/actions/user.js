@@ -23,6 +23,10 @@ export const SET_UPDATE_AVERAGE_VALUE = 'SET_UPDATE_AVERAGE_VALUE';
 export const UPDATE_AVERAGE = 'UPDATE_AVERAGE';
 export const UPDATE_AVERAGE_SUCCESS = 'UPDATE_AVERAGE_SUCCESS';
 export const UPDATE_AVERAGE_ERROR = 'UPDATE_AVERAGE_ERROR';
+export const SET_UPDATE_PRICE_VALUE = 'SET_UPDATE_PRICE_VALUE';
+export const UPDATE_PRICE = 'UPDATE_PRICE';
+export const UPDATE_PRICE_SUCCESS = 'UPDATE_PRICE_SUCCESS';
+export const UPDATE_PRICE_ERROR = 'UPDATE_PRICE_ERROR';
 export const BACK_TO_PROFILE = 'BACK_TO_PROFILE';
 
 export const signupUserValue = (newValue, name) => ({
@@ -94,5 +98,17 @@ export const updateAverageAction = () => ({ type: UPDATE_AVERAGE });
 export const updateAverageSuccess = (data) => ({ type: UPDATE_AVERAGE_SUCCESS, data });
 
 export const updateAverageError = (data) => ({ type: UPDATE_AVERAGE_ERROR, data });
+
+export const updatePriceValue = (newValue, name) => ({
+  type: SET_UPDATE_PRICE_VALUE,
+  value: newValue,
+  name,
+});
+
+export const updatePriceAction = () => ({ type: UPDATE_PRICE });
+
+export const updatePriceSuccess = (data) => ({ type: UPDATE_PRICE_SUCCESS, data });
+
+export const updatePriceError = (data) => ({ type: UPDATE_PRICE_ERROR, data });
 
 export const backToProfileAction = () => ({ type: BACK_TO_PROFILE });
