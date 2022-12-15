@@ -10,6 +10,7 @@ import UpdatePseudo from '../../containers/UpdatePseudo';
 import UpdatePassword from '../../containers/UpdatePassword';
 import UpdateAverage from '../../containers/UpdateAverage';
 import UpdatePrice from '../../containers/UpdatePrice';
+import DeleteAccount from '../../containers/DeleteAccount';
 import Error from '../Error/error';
 
 import './app.scss'
@@ -32,6 +33,7 @@ const App = ({
             <Route exact path='/profile/password' element={<UpdatePassword />} />
             <Route exact path='/profile/average' element={<UpdateAverage />} />
             <Route exact path='/profile/price' element={<UpdatePrice />} />
+            <Route exact path='/profile/delete' element={<DeleteAccount />} />
           </>
         )}
         <Route path='*' element={<Error />} />
