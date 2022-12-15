@@ -2,7 +2,10 @@ import { connect } from 'react-redux';
 
 import Home from '../../components/Home/home';
 
-import { displayWelcome } from '../../actions/user';
+import {
+  goToHome,
+  displayWelcome,
+} from '../../actions/user';
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
@@ -12,6 +15,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  handleGoToHome: () => {
+    dispatch(goToHome());
+  },
   setDisplayingWelcome: () => {
     dispatch(displayWelcome());
   },

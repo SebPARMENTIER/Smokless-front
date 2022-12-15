@@ -14,11 +14,15 @@ import './home.scss';
 const Home = ({
   isLogged,
   isSignupUserSuccess,
+  handleGoToHome,
   isDisplayingWelcome,
   setDisplayingWelcome,
   pseudo,
 }) => {
   useEffect(() => {
+    if (isSignupUserSuccess) {
+      handleGoToHome();
+    }
     if (isLogged) {
       const timer = setTimeout(() => {
         setDisplayingWelcome();
@@ -104,6 +108,7 @@ const Home = ({
 Home.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   isSignupUserSuccess: PropTypes.bool.isRequired,
+  handleGoToHome: PropTypes.func.isRequired,
   isDisplayingWelcome: PropTypes.bool.isRequired,
   setDisplayingWelcome: PropTypes.func.isRequired,
   pseudo: PropTypes.string.isRequired,
