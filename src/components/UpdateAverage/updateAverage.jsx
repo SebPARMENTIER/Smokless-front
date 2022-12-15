@@ -34,7 +34,7 @@ const UpdateAverage = ({
       <div className="updateAverage-pseudo">
         {pseudo}
       </div>
-      {!successUpdateMessage && (
+      {!isUpdateAverageSuccess && (
         <div className="updateAverage-current">
           Votre consommation moyenne quotidienne est actuellement de
           <span className="updateAverage-current-span"> {Math.round(average)} </span>

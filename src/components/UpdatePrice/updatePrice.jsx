@@ -34,7 +34,7 @@ const UpdatePrice = ({
       <div className="updatePrice-pseudo">
         {pseudo}
       </div>
-      {!successUpdateMessage && (
+      {!isUpdatePriceSuccess && (
         <div className="updatePrice-current">
           Le prix d'un paquet de 20 cigarettes est actuellement de
           <span className="updatePrice-current-span"> {Number.parseFloat(price).toFixed(2)} </span>
